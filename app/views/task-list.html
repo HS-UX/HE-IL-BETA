@@ -1,0 +1,120 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Task list template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back to account homepage",
+  href: "#"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Development Loans Application
+      </h1>
+
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Application incomplete</h2>
+      <p class="govuk-body govuk-!-margin-bottom-7">You have completed 3 of 8 sections.</p>
+
+      <ol class="govuk-prototype-kit-task-list">
+        <li>
+          <h2 class="govuk-prototype-kit-task-list__section">
+            <span class="govuk-prototype-kit-task-list__section-number">1. </span> Company structure and experience
+          </h2>
+          <p>This section is about the company structure and experience of building homes.</p>
+          <ul class="govuk-prototype-kit-task-list__items">
+            <li class="govuk-prototype-kit-task-list__item">
+              <span class="govuk-prototype-kit-task-list__task-name">
+                <a href="#" aria-describedby="eligibility-status">
+                  Complete company information
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
+          </ul>
+        </li>
+
+        <li>
+          <h2 class="govuk-prototype-kit-task-list__section">
+            <span class="govuk-prototype-kit-task-list__section-number">2. </span> Project and funding details
+          </h2>
+          <p>Complete information about the type of funding you wish to apply for, and other details about your equity and finances.</p>
+          <ul class="govuk-prototype-kit-task-list__items">
+            <li class="govuk-prototype-kit-task-list__item">
+              <span class="govuk-prototype-kit-task-list__task-name">
+                <a href="#" aria-describedby="company-information-status">
+                  Provide details about funding
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="company-information-status">Completed</strong>
+            </li>
+            <li class="govuk-prototype-kit-task-list__item">
+              <span class="govuk-prototype-kit-task-list__task-name">
+                <a href="/security-start-page" aria-describedby="contact-details-status">
+                  Provide details about security
+                </a>
+              </span>
+              {%if data['sec-check-answers'] == 'Yes'%}
+                <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="company-information-status">Completed</strong>
+              {%endif%}
+              {%if data['sec-check-answers'] == 'No'%}
+                <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="company-information-status">Not started</strong>
+              {%endif%}
+            
+          </ul>
+        </li>
+
+        <li>
+          <h2 class="govuk-prototype-kit-task-list__section">
+            <span class="govuk-prototype-kit-task-list__section-number">3. </span> Site details
+          </h2>
+          <p>Tell us about your site or sites. You can add more than one. You will need to start a new application for each company if you have different companies per site.</p>
+          <ul class="govuk-prototype-kit-task-list__items">
+            <li class="govuk-prototype-kit-task-list__item">
+              <span class="govuk-prototype-kit-task-list__task-name">
+                <a href="/site-start-page" aria-describedby="company-information-status">
+                  Site 01
+                </a>
+              </span>
+              {%if data['site-check-anwers'] == 'Yes'%}
+                <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="company-information-status">Completed</strong>
+              {%endif%}
+              {%if data['site-check-anwers'] == 'No'%}
+                <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="company-information-status">Not started</strong>
+              {%endif%}
+            </li>
+            
+              <li class="govuk-prototype-kit-task-list__item">
+                <span class="govuk-prototype-kit-task-list__task-name">
+                  <a href="site-name" aria-describedby="contact-details-status">
+                    Add another
+                  </a>
+                </span>
+              
+          </ul>
+        </li>
+      </ol>
+      <h2 class="govuk-heading-m">Check and submit</h2>
+      <p>You must complete all sections before you can submit your application.</p>
+      <button class="govuk-button" data-module="govuk-button">
+        Check and submit application
+      </button>
+    </div>
+
+    <h2 class="govuk-heading-m">Get help with your application</h2>
+<ul class="govuk-list">
+  <li>Telephone: 020 7946 0101</li>
+  <li>Monday to Friday, 9am to 5pm (except public holidays)</li>
+</ul>
+<p class="govuk-body">
+  <a class="govuk-link" href="#">Find out about call charges</a>
+</p>
+    
+  </div>
+
+{% endblock %}

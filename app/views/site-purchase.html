@@ -1,0 +1,78 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    
+
+      <form class="form" action="/site-grant-funding" method="post">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                Who did you purchase this site from?
+              </h1>
+            </legend>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="site-purchase" name="site-purchase" type="radio" value="Private individual">
+                <label class="govuk-label govuk-radios__label" for="site-purchase">
+                  Private individual
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="site-purchase-2" name="site-purchase" type="radio" value="Development company">
+                <label class="govuk-label govuk-radios__label" for="site-purchase-2">
+                  Development company
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="site-purchase-3" name="site-purchase" type="radio" value="Local authority">
+                <label class="govuk-label govuk-radios__label" for="site-purchase-3">
+                  Local authority
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="site-purchase-4" name="site-purchase" type="radio" value="Homes England">
+                <label class="govuk-label govuk-radios__label" for="site-purchase-4">
+                  Homes England
+                </label>
+              </div>
+              <div class="govuk-radios__divider">or</div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="site-purchase-6" name="site-purchase" type="radio" value="Other">
+                <label class="govuk-label govuk-radios__label" for="site-purchase-6">
+                  Other
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+      <p class="govuk-body"><a href="task-list" class="govuk-link">Return to application</a></p>
+      <p class="govuk-body"><a href="sec-check-answers.html" class="govuk-link">Show and edit all answers for this section</a></p>
+      
+    </div>
+  </div>
+
+{% endblock %}

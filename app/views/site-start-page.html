@@ -1,0 +1,50 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Start page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+<!-- Blank header with no service name for the start page -->
+{{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+<a href="task-list" class="govuk-back-link">Back to application</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      Site details
+    </h1>
+
+    <p>Tell us about your site or sites. You can add more than one.</p>
+    <p>In this section, you might need to tell us:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>the site name, type and address</li>
+      <li>the amount and type of homes you are building</li>
+      <li>details about the planning permission</li>
+      <li>details about the ownership of the site</li>
+      <li>any public sector grant funding the site has received/li>
+      <li>if there are any legal charges or debt on the site</li>
+      <li>the amount of affordable homes the project will deliver</li>
+    </ul>
+
+    <a href="/site-name" role="button" draggable="false" class="govuk-button govuk-button--start"
+      data-module="govuk-button">
+      Start now
+      <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19"
+        viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+        <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+      </svg>
+    </a>
+
+  </div>
+</div>
+
+{% endblock %}

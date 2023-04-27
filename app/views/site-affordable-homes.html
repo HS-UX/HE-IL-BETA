@@ -1,0 +1,45 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<a href="javascript:window.history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+
+  <form class="form" action="/site-check-anwers" method="post">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        How many affordable homes do you intend to deliver on this site?
+      </h1>
+
+      <p>Affordable homes are properties provided at a cost below market levels. If your site contains no affordable homes, enter 0. This will not affect your application. You'll be able to discuss this with your transaction manager at a later stage.</p>
+
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="site-affordable-homes">
+
+        </label>
+        <input class="govuk-input govuk-input--width-4" id="site-affordable-homes" name="site-affordable-homes"
+          type="text" value="{{ data['site-affordable-homes'] }}">
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+
+  </form>
+  <p class="govuk-body"><a href="task-list" class="govuk-link">Return to application</a></p>
+  <p class="govuk-body"><a href="sec-check-answers.html" class="govuk-link">Show and edit all answers for this
+      section</a></p>
+</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,126 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<a href="javascript:window.history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      Additional site details
+    </h1>
+    <form class="form" action="/site-purchase" method="post">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="site-additional-dates-hint">
+          <legend class="govuk-heading-m">
+            When was this site purchased?
+          </legend>
+          <p>For example, 27 3 2022</p>
+
+          <div class="govuk-date-input" id="site-additional-dates">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="site-additional-dates-day">
+                  Day
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="site-additional-dates-day"
+                  name="site-additional-dates-day" type="text" inputmode="numeric" value="{{ data['site-additional-dates-day'] }}">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="site-additional-dates-month">
+                  Month
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="site-additional-dates-month"
+                  name="site-additional-dates-month" type="text" inputmode="numeric" value="{{ data['site-additional-dates-month'] }}">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="site-additional-dates-year">
+                  Year
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="site-additional-dates-year"
+                  name="site-additional-dates-year" type="text" inputmode="numeric" value="{{ data['site-additional-dates-year'] }}">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+<br>
+      <div class="govuk-form-group">
+        <h2 class="govuk-heading-m">What was the purchase value of the site?</h2>
+        </h1>
+        <p>If you do not know, enter the nearest estimate.</p>
+        <div class="govuk-input__wrapper">
+          <div class="govuk-input__prefix" aria-hidden="true">£</div>
+          <input class="govuk-input govuk-input--width-5" id="site-additional-cost" name="site-additional-cost"
+            type="text" spellcheck="false" value="{{ data['site-additional-cost'] }}">
+        </div>
+      </div>
+<br>
+      <div class="govuk-form-group">
+        <h2 class="govuk-heading-m">What is the current value of the site?</h2>
+        </h1>
+        <p>If you do not know, enter the nearest estimate.</p>
+        <div class="govuk-input__wrapper">
+          <div class="govuk-input__prefix" aria-hidden="true">£</div>
+          <input class="govuk-input govuk-input--width-5" id="site-additional-worth" name="site-additional-worth"
+            type="text" spellcheck="false" value="{{ data['site-additional-worth'] }}">
+        </div>
+      </div>
+<br>
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h2 class="govuk-heading-m">What is the source of this valuation?</h2>
+            </h1>
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="site-additional-source" name="site-additional-source" type="radio"
+                value="Customer estimate">
+              <label class="govuk-label govuk-radios__label" for="site-additional-source">
+                Customer estimate
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="site-additional-source-2" name="site-additional-source"
+                type="radio" value="Estate agent estimate">
+              <label class="govuk-label govuk-radios__label" for="site-additional-source-2">
+                Estate agent estimate
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="site-additional-source-3" name="site-additional-source"
+                type="radio" value="RCS redbook valuation">
+              <label class="govuk-label govuk-radios__label" for="site-additional-source-3">
+                RICS redbook valuation
+              </label>
+
+            </div>
+        </fieldset>
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+    </form>
+
+    <p class="govuk-body"><a href="task-list" class="govuk-link">Return to application</a></p>
+    <p class="govuk-body"><a href="sec-check-answers.html" class="govuk-link">Show and edit all answers for this
+        section</a></p>
+
+  </div>
+</div>
+
+{% endblock %}

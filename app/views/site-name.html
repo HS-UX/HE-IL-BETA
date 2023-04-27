@@ -1,0 +1,43 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<a href="javascript:window.history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      Add a site
+    </h1>
+
+    <h2 class="govuk-heading-m">What is the site name?</h2>
+    <p>We will use this name to differentiate between sites if you have added more than one as part of this application.
+    </p>
+
+    <form class="form" action="/site-many-homes" method="post">
+
+      <div class="govuk-form-group">
+        <input class="govuk-input" id="site-name" name="site-name" type="text" value="{{ data['site-name'] }}">
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+
+    </form>
+
+    <p class="govuk-body"><a href="task-list" class="govuk-link">Return to application</a></p>
+    <p class="govuk-body"><a href="sec-check-answers.html" class="govuk-link">Show and edit all answers for this
+        section</a></p>
+
+  </div>
+</div>
+
+{% endblock %}

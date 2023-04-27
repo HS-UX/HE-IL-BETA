@@ -1,0 +1,90 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<a href="javascript:window.history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+
+    <form class="form" action="/yes-no-confirmation" method="post">
+      <input name="yes-route" value="/sec-check-answers" type="hidden">
+      <input name="no-route" value="/sec-dir-loans-sub-more" type="hidden">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+            </h1>
+          </legend>
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                  How do you want to provide your site location? 
+                </h1>
+              </legend>
+              <div id="contact-hint" class="govuk-hint">
+              </div>
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" checked data-aria-controls="conditional-contact">
+                  <label class="govuk-label govuk-radios__label" for="contact">
+                    X/Y coordinates
+                  </label>
+                </div>
+                <div class="govuk-radios__conditional" id="conditional-contact">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="contact-by-email">
+                      To find your site coordinates, use any online digital mapping service, such as Google Maps. Find your site location and then right-click anywhere within the site boundary. This will provide the X/Y coordinates.
+                    </label>
+                    
+                    <input class="govuk-input govuk-!-width-two-thirds" id="contact-by-email" name="contact-by-email" type="email" spellcheck="false" aria-describedby="contact-by-email-error" autocomplete="email">
+                  </div>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone" data-aria-controls="conditional-contact-2">
+                  <label class="govuk-label govuk-radios__label" for="contact-2">
+                    Land Registry title number
+                  </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="contact-by-phone">
+                      Your site title number will begin with 2 or 3 letters to denote the area, followed by numbers. For example, NT123456. This can be found on the Title Deeds, or correspondence with your solicitor when you purchased the site. If you have multiple title numbers, separate these with a comma.
+                    </label>
+                    <input class="govuk-input govuk-!-width-two-thirds" id="contact-by-phone" name="contact-by-phone" type="tel" autocomplete="tel">
+                  </div>
+                </div>
+                
+              </div>
+            </fieldset>
+          </div>
+            
+          
+        </fieldset>
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+
+    </form>
+
+  </div>
+</div>
+
+<p class="govuk-body"><a href="task-list" class="govuk-link">Return to application</a></p>
+<p class="govuk-body"><a href="sec-check-answers.html" class="govuk-link">Show and edit all answers for this section</a>
+</p>
+
+
+{% endblock %}

@@ -1,0 +1,71 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<a href="javascript:window.history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      Provide more information
+    </h1>
+    <p>Tell us more about any public sector grant funding this site has received.</p>
+
+    <form class="form" action="/site-affordable-homes" method="post">
+
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--m" for="site-grant-funding-more-who">
+          Who provided the previous funding?
+        </label>
+        <input class="govuk-input" id="site-grant-funding-more-who" name="site-grant-funding-more-who" type="text" value="{{ data['site-grant-funding-more-who'] }}">
+      </div>
+
+      <div class="govuk-form-group">
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--m" for="site-grant-funding-more-cost">
+            How much funding have they provided?
+          </label>
+        </h1>
+        <div class="govuk-input__wrapper">
+          <div class="govuk-input__prefix" aria-hidden="true">£</div>
+          <input class="govuk-input govuk-input--width-5" id="site-grant-funding-more-cost"
+            name="site-grant-funding-more-cost" type="text" spellcheck="false" value="{{ data['site-grant-funding-more-cost'] }}">
+        </div>
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--m" for="site-grant-funding-more-name">
+          What is the name of the grant or fund?
+        </label>
+        <input class="govuk-input" id="site-grant-funding-more-name" name="site-grant-funding-more-name" type="text" value="{{ data['site-grant-funding-more-name'] }}">
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--m" for="site-grant-funding-more-detail">
+          What was it for?
+        </label>
+        <textarea class="govuk-textarea" id="site-grant-funding-more-detail" name="site-grant-funding-more-detail"
+          rows="5">{{ data['site-grant-funding-more-detail'] }}</textarea>
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+
+    </form>
+
+    <p class="govuk-body"><a href="task-list" class="govuk-link">Return to application</a></p>
+    <p class="govuk-body"><a href="sec-check-answers.html" class="govuk-link">Show and edit all answers for this
+        section</a></p>
+
+  </div>
+</div>
+
+{% endblock %}

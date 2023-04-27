@@ -1,0 +1,42 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<a href="javascript:window.history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <form class="form" action="/site-check-planning" method="post">
+
+      <div class="govuk-form-group">
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--l" for="site-planning-ref-enter">
+            What is your planning reference number?
+          </label>
+        </h1>
+        <p>A typical planning reference number is formatted: YY/REF/TYPE. For example, 23/1234/FULL.</p>
+        <input class="govuk-input" id="site-planning-ref-enter" name="site-planning-ref-enter" type="text" value="{{ data['site-planning-ref-enter'] }}">
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+
+    </form>
+
+    <p class="govuk-body"><a href="task-list" class="govuk-link">Return to application</a></p>
+    <p class="govuk-body"><a href="sec-check-answers.html" class="govuk-link">Show and edit all answers for this
+        section</a></p>
+
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<a href="javascript:window.history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      How many homes are you building?
+    </h1>
+
+    <form class="form" action="/site-type-homes" method="post">
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="site-many-homes">
+          Enter how many homes you are building or the nearest estimate.
+        </label>
+        <input class="govuk-input govuk-input--width-5" id="site-many-homes" name="site-many-homes" type="text" value="{{ data['site-many-homes'] }}">
+      </div>
+
+      <div class="govuk-inset-text">
+        Homes England does not provide loans to developers building less than 5 homes.
+        If you have any questions, contact us via telephone: 0800...
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+
+    </form>
+    <p class="govuk-body"><a href="task-list" class="govuk-link">Return to application</a></p>
+    <p class="govuk-body"><a href="sec-check-answers.html" class="govuk-link">Show and edit all answers for this
+        section</a></p>
+  </div>
+</div>
+
+{% endblock %}

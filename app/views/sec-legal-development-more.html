@@ -1,0 +1,42 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <form class="form" action="/sec-charges-debt-company" method="post">
+          <div class="govuk-form-group">
+            <h1 class="govuk-label-wrapper">
+              <label class="govuk-label govuk-label--l" for="sec-legal-development-more">
+                Provide more information
+              </label>
+            </h1>
+            <div id="sec-legal-development-more-hint" class="govuk-hint">
+              Tell us more about existing legal charges over the development site.
+            </div>
+            <textarea class="govuk-textarea" id="sec-legal-development-more" name="sec-legal-development-more" rows="5" aria-describedby="sec-legal-development-more-hint"></textarea>
+          </div>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

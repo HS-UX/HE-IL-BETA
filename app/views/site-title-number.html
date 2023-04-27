@@ -1,0 +1,45 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <form class="form" action="/site-additional-no-ref" method="post">
+
+        <div class="govuk-form-group">
+          <h1 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label--l" for="event-name">
+              What is your title number?
+            </label>
+          </h1>
+          <p>Your title number will begin with 2 or 3 letters to denote the area, followed by numbers. For example, NT123456. This can be found on the Title Deeds, or correspondence with your solicitor when you purchased the site.</p>
+          <input class="govuk-input" id="event-name" name="event-name" type="text">
+        </div>
+       
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+      <p class="govuk-body"><a href="task-list" class="govuk-link">Return to application</a></p>
+      <p class="govuk-body"><a href="sec-check-answers.html" class="govuk-link">Show and edit all answers for this section</a></p>
+
+    </div>
+  </div>
+
+{% endblock %}

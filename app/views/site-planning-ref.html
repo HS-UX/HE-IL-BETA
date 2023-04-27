@@ -1,0 +1,64 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<a href="javascript:window.history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+
+    <form class="form" action="/yes-no-confirmation" method="post">
+      <input name="yes-route" value="/site-planning-ref-enter" type="hidden">
+      <input name="no-route" value="/site-ownership-no-ref" type="hidden">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="site-planning-ref-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              Do you have a planning reference number?
+            </h1>
+            <p>This can be found on any correspondence you’ve had with your Local Authority regarding your planning permission.</p>
+          </legend>
+          <div id="site-planning-ref-hint" class="govuk-hint">
+            <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="site-planning-ref" name="site-planning-ref" type="radio"
+                  value="yes">
+                <label class="govuk-label govuk-radios__label" for="site-planning-ref">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="site-planning-ref-2" name="site-planning-ref" type="radio"
+                  value="no">
+                <label class="govuk-label govuk-radios__label" for="site-planning-ref-2">
+                  No
+                </label>
+              </div>
+            </div>
+        </fieldset>
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+
+    </form>
+
+  </div>
+</div>
+
+<p class="govuk-body"><a href="task-list" class="govuk-link">Return to application</a></p>
+<p class="govuk-body"><a href="sec-check-answers.html" class="govuk-link">Show and edit all answers for this section</a>
+</p>
+
+
+{% endblock %}
