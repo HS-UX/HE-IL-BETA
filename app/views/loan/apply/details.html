@@ -1,0 +1,78 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<a href="javascript:window.history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">
+      Check your details
+    </h1>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Charges outstanding or debt secured on company
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['sec-charges-debt' ]}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="sec-charges-debt">
+            Change<span class="govuk-visually-hidden"> sec-charges-debt</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Debenture
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['sec-legal-development'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="sec-legal-development">
+            Change<span class="govuk-visually-hidden"> sec-legal-development</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Director loans
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['sec-legal-development-more'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="sec-legal-development-more">
+            Change<span class="govuk-visually-hidden"> sec-legal-development-more</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Subordinated loans
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['sec-charges-debt-company'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="sec-charges-debt-company">
+            Change<span class="govuk-visually-hidden"> sec-charges-debt-company</span>
+          </a>
+        </dd>      
+      </div>
+    </dl>
+    <form class="form" action="question2" method="post">
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+    </form>
+  </div>
+</div>
+{% endblock %}

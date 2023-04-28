@@ -1,0 +1,40 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<a href="javascript:window.history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">
+      What you need to know about the loan
+    </h1>
+
+    <p>[TODO] In this section, you might need to tell us:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>[TODO] the site name, type and address</li>
+      <li>[TODO] the amount and type of homes you are building</li>
+      <li>[TODO] details about the planning permission</li>
+    </ul>
+
+    <p>[TODO] In this section, you might need to tell us:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>[TODO] the site name, type and address</li>
+      <li>[TODO] the amount and type of homes you are building</li>
+      <li>[TODO] details about the planning permission</li>
+    </ul>
+
+    <p>[TODO] In this section, you might need to tell us:</p>
+    <form class="form" action="details" method="post">
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+    </form>
+  </div>
+</div>
+{% endblock %}
