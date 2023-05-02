@@ -12,22 +12,19 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-l">
-      Check your details
+      Check your answers
     </h1>
-   
-    <div class="govuk-inset-text">
-      Homes England only offers loans to private limited companies.<br>
-      Your account suggests you're not a private limited company.<br>
-      If you have any questions, contact us via telephone: 0800...
-    </div>
-    
+
+    <h1 class="govuk-heading-m">
+      Company structure and experience
+    </h1>
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Registered company name
+          Company established for this development
         </dt>
         <dd class="govuk-summary-list__value">
-          ABC Developments
+          No
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="">
@@ -37,10 +34,10 @@
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Company Registration Number
+          Existing company delivering this development
         </dt>
         <dd class="govuk-summary-list__value">
-          AC012345
+          No
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="">
@@ -50,13 +47,12 @@
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Company address
+          Additional information
         </dt>
         <dd class="govuk-summary-list__value">
-          12 Wharf Street<br>
-          Leeds<br>
-          LS1 3JW<br>
-          United Kingdom
+          Lorem ipsum dolor sit amet, consectetur<br>
+          adipiscing elit, sed do eiusmod tempor<br>
+          incididunt ut labore et dolore magna aliqua. 
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="">
@@ -66,36 +62,10 @@
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Contact name
+          Homes in the last three years
         </dt>
         <dd class="govuk-summary-list__value">
-          Johan Aswani
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="">
-            Change<span class="govuk-visually-hidden"> sec-charges-debt-company</span>
-          </a>
-        </dd>      
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Email address
-        </dt>
-        <dd class="govuk-summary-list__value">
-          example@mail.com
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="">
-            Change<span class="govuk-visually-hidden"> sec-charges-debt-company</span>
-          </a>
-        </dd>      
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Telephone number
-        </dt>
-        <dd class="govuk-summary-list__value">
-          01238 956738
+          67
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="">
@@ -104,9 +74,32 @@
         </dd>      
       </div>
     </dl>
-    <form class="form" action="question2" method="post">
+
+
+    <h1 class="govuk-heading-m">
+      Have you completed this section?
+    </h1>
+    <form class="form" action="../summary" method="post">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="sign-in-hint">
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="sign-in-2" name="sign-in" type="radio" value="govuk-verify" aria-describedby="sign-in-2-item-hint">
+              <label class="govuk-label govuk-radios__label" for="sign-in-2">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="sign-in-2" name="sign-in" type="radio" value="govuk-verify" aria-describedby="sign-in-2-item-hint">
+              <label class="govuk-label govuk-radios__label" for="sign-in-2">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
       <button class="govuk-button" data-module="govuk-button">
-        Continue
+        Save and Continue
       </button>
     </form>
   </div>

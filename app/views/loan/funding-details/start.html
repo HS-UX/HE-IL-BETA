@@ -5,24 +5,28 @@
 {% endblock %}
 
 {% block beforeContent %}
-<a href="javascript:window.history.back()" class="govuk-back-link">Back to account homepage</a>
+<a href="javascript:window.history.back()" class="govuk-back-link">Back to application</a>
 {% endblock %}
 
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-l">
-      Apply for a development loan
+      Funding details
     </h1>
-    <p>Before you progress, we want to check the details we hold for you are correct.</p>
-    <label class="govuk-label">In this section, you’ll need to review:</label>
+
+    <p>We need to know about the funding details for this project. </p>
+
+    <label class="govuk-label">In this section, you’ll tell us:</label>
     <ul class="govuk-list govuk-list--bullet">
-      <li>your full name</li>
-      <li>your username</li>
-      <li>your organisation name</li>
-      <li>your telephone number within the organisation</li>
-      <li>your organisation’s address</li>
+      <li>Gross Development Value (GDV)</li>
+      <li>total project costs</li>
+      <li>if you have approached a private sector provider for funding for this project</li>
+      <li>if you have previously received public sector grant funding for this project</li>
+      <li>if you are working on any additional projects</li>
+      <li>how you plan repay the loan for this project</li>
     </ul>
+
     <form class="form" action="question1" method="post">
       <button class="govuk-button govuk-button--start" data-module="govuk-button">
         Start now

@@ -1,0 +1,34 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<a href="javascript:window.history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">
+      How many homes in the past three years has your organisation built? 
+    </h1>
+    
+    <form class="form" action="details" method="post">
+      <div class="govuk-form-group">
+        <div id="event-name-hint" class="govuk-hint">
+          Enter the number of homes your organisation has built in the past three years or the nearest estimate.
+        </div>
+        <input class="govuk-input govuk-input--width-2 govuk-input--extra-letter-spacing" id="event-code" name="event-code" type="text" spellcheck="false" aria-describedby="event-code-hint">
+      </div>
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+    </form>
+
+    <p class="govuk-body"><a href="../summary" class="govuk-link">Return to application</a></p>
+    <p class="govuk-body"><a href="details" class="govuk-link">Show and edit all answers for this section</a></p>
+  </div>
+</div>
+{% endblock %}
