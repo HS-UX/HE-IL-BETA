@@ -9,7 +9,18 @@
   {{ govukHeader() }}
 {% endblock %}
 
+
+
 {% block beforeContent %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.',
+  classes: "govuk-!-margin-bottom-9"
+}) }}
+
   {{ govukBackLink({
   text: "Back",
   href: "javascript:window.history.back()"
@@ -18,10 +29,12 @@
 
 {% block content %}
 
+
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">
-        Provide cashflow information - project 1
+        {{serviceName}}
       </h1>
       <p>
         As part of your application, you need to provide a detailed cashflow. This will help us calculate how much money you will need to receive each month.
