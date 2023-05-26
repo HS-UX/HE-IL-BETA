@@ -4,3 +4,20 @@
 // 
 
 // Add extra styles here
+
+.input-section {
+    display: flex;
+    justify-content: flex-start;
+    > * {
+        margin-right: 24px;
+    }
+}
+.no-padding {
+    .govuk-prototype-kit-task-list__items {
+        padding-left: 0;
+    }
+}
+
+.grey-text {
+   color: #505a5f;	
+}

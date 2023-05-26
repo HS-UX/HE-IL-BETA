@@ -1,0 +1,181 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-xl">
+        Check your answers
+      </h1>
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key:{text: "Phase 1"}
+          },
+          {
+            key: {
+              text: "Start date"
+            },
+            value: {
+              text: data['phase-1-start-month'] + "/" + data['phase-1-start-year']
+            },
+            actions: {
+              items: [
+                {
+                  href: "/cashflow-intro-5-p1",
+                  text: "Change",
+                  visuallyHiddenText: "Start date"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Completion date"
+            },
+            value: {
+              text: data['phase-1-completion-month'] + "/" + data['phase-1-completion-year']
+            },
+            actions: {
+              items: [
+                {
+                  href: "/cashflow-intro-5-p1",
+                  text: "Change",
+                  visuallyHiddenText: "Start date"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Homes"
+            },
+            value: {
+              text: data['phase-1-homes'] + "-20" 
+            },
+            actions: {
+              items: [
+                {
+                  href: "/cashflow-intro-4",
+                  text: "Change",
+                  visuallyHiddenText: "Question 2"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key:{text: "Phase 2"}
+          },
+          {
+            key: {
+              text: "Start date"
+            },
+            value: {
+              text: data['phase-2-start-month'] + "/" + data['phase-2-start-year']
+            },
+            actions: {
+              items: [
+                {
+                  href: "/cashflow-intro-5-p2",
+                  text: "Change",
+                  visuallyHiddenText: "Start date"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Completion date"
+            },
+            value: {
+              text: data['phase-2-completion-month'] + "/" + data['phase-2-completion-year']
+            },
+            actions: {
+              items: [
+                {
+                  href: "/cashflow-intro-5-p2",
+                  text: "Change",
+                  visuallyHiddenText: "Start date"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Homes"
+            },
+            value: {
+              text: data['phase-2-homes'] + "-20" 
+            },
+            actions: {
+              items: [
+                {
+                  href: "/cashflow-intro-4",
+                  text: "Change",
+                  visuallyHiddenText: "Question 2"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key:{text: "Total"}
+          },
+          {
+            key: {
+              text: "Homes to be built"
+            },
+            value: {
+              text: "20"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Total"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+
+      <form action="/cashflow-form" method="post" novalidate>
+       
+        {{ govukButton({
+          text: "Continue",
+          classes: "govuk-!-margin-top-9"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

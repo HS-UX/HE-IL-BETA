@@ -1,0 +1,90 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <p>Phase 2</p>
+        <h1 class="govuk-fieldset__heading">
+          Phase 2 start and completion date
+        </h1>
+        <p>Enter the projected start and completion date for phase 2.</p>
+      </legend>
+
+
+
+
+      <form class="form" action="/cashflow-multiple" method="post">
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+        <h2 class="govuk-table__caption--m">Start date</h2>
+        <section class="input-section">
+          {{ govukInput({
+            label: {
+              text: "Month"
+            },
+            classes: "govuk-input--width-2",
+            id: "phase-2-start-month",
+            name: "phase-2-start-month",
+            value: data['phase-2-start-month']
+          }) }}
+  
+          {{ govukInput({
+            label: {
+              text: "Year"
+            },
+            classes: "govuk-input--width-4",
+            id: "phase-2-start-year",
+            name: "phase-2-start-year",
+            value: data['phase-2-start-year']
+          }) }}
+        </section>
+
+        <h2 class="govuk-table__caption--m">Completion date</h2>
+        <section class="input-section">
+          {{ govukInput({
+            label: {
+              text: "Month"
+            },
+            classes: "govuk-input--width-2",
+            id: "phase-2-completion-month",
+            name: "phase-2-completion-month",
+            value: data['phase-2-completion-month']
+          }) }}
+  
+          {{ govukInput({
+            label: {
+              text: "Year"
+            },
+            classes: "govuk-input--width-4",
+            id: "phase-2-completion-year",
+            name: "phase-2-completion-year",
+            value: data['phase-2-completion-year']
+          }) }}
+        </section>
+
+
+
+        {{ govukButton({
+          text: "Continue",
+          classes: "govuk-!-margin-top-9"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

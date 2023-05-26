@@ -24,7 +24,7 @@
       </p>
 
 
-      <form class="form" action="/path/of/next/page" method="post">
+      <form class="form" action="/cashflow-intro-3" method="post">
 
         {{ govukRadios({
           name: "are-you-delivering-this-project-in-phases?",
@@ -38,11 +38,14 @@
           items: [
             {
               value: "Yes, this project will be delivered in multiple phases",
-              text: "Yes, this project will be delivered in multiple phases"
+              text: "Yes, this project will be delivered in multiple phases",
+              checked: checked("are-you-delivering-this-project-in-phases?", "Yes, this project will be delivered in multiple phases")
             },
             {
               value: "No, this project will be delivered in one phase",
-              text: "No, this project will be delivered in one phase"
+              text: "No, this project will be delivered in one phase",
+              checked: checked("are-you-delivering-this-project-in-phases?", "No, this project will be delivered in one phase")
+              
             }
           ]
         }) }}

@@ -17,11 +17,9 @@
     <div class="govuk-grid-column-two-thirds">
       <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
         <h1 class="govuk-fieldset__heading">
-          Total number of homes
+          Enter how many phases you plan to deliver this site in.
         </h1>
       </legend>
-      <p>During the application process, you told us the total number of homes that you’ll build as part of your project.
-      </p>
 
       {{ govukTable({
 
@@ -38,7 +36,7 @@
         rows: [
           [
           {
-            text: "Homes to be built"
+            text: "Total number of homes"
           },
           {
             text: "20"
@@ -48,29 +46,39 @@
         ]
       }) }}
 
-      <form class="form" action="/cashflow-intro-2" method="post">
 
-        {{ govukRadios({
-          name: "is-this-number-still-accurate?",
-          fieldset: {
-            legend: {
-              text: "Is this number still accurate?",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--m"
-            }
+
+      <form class="form" action="/cashflow-intro-5-p1" method="post">
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+        <h2 class="govuk-table__caption--m">Phase 1</h2>
+        {{ govukInput({
+          label: {
+            text: "Enter the number of homes per phase."
           },
-          items: [
-            {
-              value: "Yes, continue with the above details",
-              text: "Yes, continue with the above details",
-              checked: checked("is-this-number-still-accurate?", "Yes, continue with the above details")
-            },
-            {
-              value: "No, I need to make changes",
-              text: "No, I need to make changes",
-              checked: checked("is-this-number-still-accurate?", "No, I need to make changes")
-            }
-          ]
+          classes: "govuk-input--width-5",
+          id: "phase-1-homes",
+          name: "phase-1-homes",
+          suffix: {
+            text: "homes"
+          },
+          value: data['phase-1-homes'],
+          spellcheck: false
+        }) }}
+
+        <h2 class="govuk-table__caption--m">Phase 2</h2>
+        {{ govukInput({
+          label: {
+            text: "Enter the number of homes per phase."
+          },
+          classes: "govuk-input--width-5",
+          id: "phase-2-homes",
+          name: "phase-2-homes",
+          value: data['phase-2-homes'],
+          suffix: {
+            text: "homes"
+          },
+          spellcheck: false
         }) }}
 
 
