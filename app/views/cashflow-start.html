@@ -1,0 +1,64 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Start page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Provide cashflow information - project 1
+      </h1>
+      <p>
+        As part of your application, you need to provide a detailed cashflow. This will help us calculate how much money you will need to receive each month.
+      </p>
+      
+      <p>
+        During this stage of the application, you will need to provide us with information about:
+        <ul class="govuk-list govuk-list--bullet">
+          <li>the number of phases you are delivering this project in</li>
+          <li>how many homes you are building in each phase</li>
+          <li>the start date and completion date of each phase</li>
+        </ul>
+      </p>
+
+      <p>
+        You will also need to define each house type you are delivering. We will ask you to provide the following details about each house type:
+        <ul class="govuk-list govuk-list--bullet">
+          <li>construction method</li>
+          <li>square footage </li>
+          <li>projected sales value</li>
+        </ul>
+      </p>
+
+      <p>
+        At a later stage in the application, we will ask you to go into more detail regarding each phase. Some information provided at the beginning of this application will be editable at this stage.
+      </p>
+
+
+      {{ govukButton({
+        text: "Start now",
+        href: "/cashflow-intro-1",
+        isStartButton: true,
+        classes: "govuk-!-margin-top-9"
+      }) }}
+
+    </div>
+
+  </div>
+
+{% endblock %}
