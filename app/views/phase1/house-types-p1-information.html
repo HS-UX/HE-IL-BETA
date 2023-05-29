@@ -1,0 +1,101 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
+          Phase 1 information
+        </h1>
+      </legend>
+
+      {{ govukTable({
+
+        captionClasses: "govuk-table__caption--m",
+        firstCellIsHeader: true,
+        head: [
+          {
+            text: ""
+          },
+          {
+            text: ""
+          }
+        ],
+        rows: [
+          [
+            {
+              text: "Start date"
+            },
+            {
+              text: data['phase-1-start-month'] + "/" + data['phase-1-start-year']
+            }
+          ],
+          [
+          {
+            text: "Completion date"
+          },
+          {
+            text: data['phase-1-completion-month'] + "/" + data['phase-1-completion-year']
+          }
+        ]
+        ,
+        [
+          {
+            text: "Plots"
+          },
+          {
+            text: data['phase-1-homes'] + "-20" 
+          }
+        ]
+        ]
+      }) }}
+
+      <form class="form" action="#" method="post">
+
+        {{ govukRadios({
+          name: "is-this-information-correct?",
+          fieldset: {
+            legend: {
+              text: "Is this information correct?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "Yes, the above information is correct",
+              text: "Yes, the above information is correct",
+              checked: checked("is-this-information-correct?", "Yes, the above information is correct")
+            },
+            {
+              value: "No, I need to make changes",
+              text: "No, I need to make changes",
+              checked: checked("is-this-information-correct?", "No, I need to make changes")
+            }
+          ]
+        }) }}
+
+
+        {{ govukButton({
+          text: "Continue",
+          classes: "govuk-!-margin-top-9"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,73 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <p>House type A</p>
+        <h1 class="govuk-fieldset__heading">
+          What construction method will be used to build this house type?
+        </h1>
+      </legend>
+
+
+      <form class="form" action="/housetypes/what-is-the-size-of-this-house-type" method="post">
+
+        {{ govukRadios({
+          name: "what-construction-method-will-be-used-to-build-this-house-type",
+          fieldset: {
+            legend: {
+              text: "",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "Traditional",
+              text: "Traditional",
+              checked: checked("what-construction-method-will-be-used-to-build-this-house-type", "Open market housing - homes sold directly to homebuyers on the open market Hint text")
+            },
+            {
+              value: "Timber frame",
+              text: "Timber frame",
+              checked: checked("what-construction-method-will-be-used-to-build-this-house-type", "Timber frame")
+            },
+            {
+              value: "Modern methods of construction (offsite)",
+              text: "Modern methods of construction (offsite)",
+              checked: checked("what-construction-method-will-be-used-to-build-this-house-type", "Modern methods of construction (offsite)")
+            },
+            {
+              value: "Other",
+              text: "Other",
+              checked: checked("what-construction-method-will-be-used-to-build-this-house-type", "Other")
+            }
+
+          ]
+        }) }}
+
+
+        {{ govukButton({
+          text: "Continue",
+          classes: "govuk-!-margin-top-9"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

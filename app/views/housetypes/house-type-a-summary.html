@@ -1,0 +1,145 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Check your answers
+      </h1>
+
+      <h3 class="govuk-fieldset__legend--m">House type A</h3>
+
+      <form class="form" action="/path/of/next/page" method="post">
+
+        {{ govukSummaryList({
+          rows: [
+            {
+              key:{
+                text: "Tenure"
+              },
+              value: {
+                text: data['what-tenure-is-this-house-type']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "/housetypes/what-tenure-is-this-house-type",
+                    text: "Change",
+                    visuallyHiddenText: ""
+                  }
+                ]
+              }
+            },
+            {
+              key:{
+                text: "Construction method"
+              },
+              value: {
+                text: data['what-construction-method-will-be-used-to-build-this-house-type']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "/housetypes/what-construction-method-will-be-used-to-build-this-house-type",
+                    text: "Change",
+                    visuallyHiddenText: ""
+                  }
+                ]
+              }
+            },
+            {
+              key:{
+                text: "Size"
+              },
+              value: {
+                text: data['size-of-this-house-type-a']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "/housetypes/what-is-the-size-of-this-house-type",
+                    text: "Change",
+                    visuallyHiddenText: ""
+                  }
+                ]
+              }
+            },
+            {
+              key:{
+                text: "Projected sales value"
+              },
+              value: {
+                text: data['dales-value-of-house-type-a']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "/housetypes/what-is-the-projected-sales-value-of-this-house-type",
+                    text: "Change",
+                    visuallyHiddenText: ""
+                  }
+                ]
+              }
+            }
+            
+          ]
+        }) }}
+
+
+        {{ govukRadios({
+          name: "do-you-want-to-add-another-house-type",
+          fieldset: {
+            legend: {
+              text: "Is this number still accurate?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "Yes, add another house type",
+              text: "Yes, add another house type",
+              checked: checked("do-you-want-to-add-another-house-type", "Yes, add another house type")
+            },
+            {
+              value: "No, go back to the cashflow",
+              text: "No, go back to the cashflow",
+              checked: checked("do-you-want-to-add-another-house-type", "No, go back to the cashflow")
+            }
+          ]
+        }) }}
+
+        <section class="govuk-!-margin-top-9">
+          {{ govukButton({
+            text: "Continue",
+            classes: "button-spacing-right"
+          }) }}
+  
+          {{ govukButton({
+            text: "Remove this house type",
+            classes: "govuk-button--secondary ",
+            href: "/cashflow/cashflow-intro-1"
+          }) }}
+        </section>
+
+
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
