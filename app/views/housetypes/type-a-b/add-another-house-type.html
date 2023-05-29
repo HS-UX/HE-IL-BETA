@@ -1,0 +1,83 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set serviceName %}
+  Define a house type
+{% endset%}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Add another house type
+      </h1>
+
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header"></th>
+            <th scope="col" class="govuk-table__header"></th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">House type A</th>
+            <td class="govuk-table__cell">
+             <span class="wrap-text"> {{ data['what-tenure-is-this-house-type']}}</span> 
+              {{ data['what-construction-method-will-be-used-to-build-this-house-type']}} <br/>
+              {{ data['size-of-this-house-type-a']}} square feet <br/>
+              £{{data['dales-value-of-house-type-a']}}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <form class="form" action="/housetypes/add-another-house-type-answer" method="post">
+
+
+        {{ govukRadios({
+          name: "how-would-you-like-to-add-another-house-type",
+          fieldset: {
+            legend: {
+              text: "How would you like to add another house type?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "I would like to create a new house type",
+              text: "I would like to create a new house type",
+              checked: checked("how-would-you-like-to-add-another-house-type", "I would like to create a new house type")
+            },
+            {
+              value: "I would like to copy House type A and edit",
+              text: "I would like to copy House type A and edit",
+              checked: checked("how-would-you-like-to-add-another-house-type", "I would like to copy House type A and edit")
+            }
+          ]
+        }) }}
+
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

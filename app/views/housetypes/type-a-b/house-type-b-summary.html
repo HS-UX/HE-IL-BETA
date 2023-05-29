@@ -21,7 +21,7 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-l">
-        Define house type B
+        Check your answers
       </h1>
 
       <h3 class="govuk-fieldset__legend--m">House type B</h3>
@@ -35,12 +35,12 @@
                 text: "Tenure"
               },
               value: {
-                text: data['what-tenure-is-this-house-type-b']
+                text: data['what-tenure-is-this-house-type']
               },
               actions: {
                 items: [
                   {
-                    href: "/housetypes/type-b/what-tenure-is-this-house-type",
+                    href: "/housetypes/type-a-b/what-tenure-is-this-house-type",
                     text: "Change",
                     visuallyHiddenText: ""
                   }
@@ -52,12 +52,12 @@
                 text: "Construction method"
               },
               value: {
-                text: data['what-construction-method-will-be-used-to-build-this-house-type-b']
+                text: data['what-construction-method-will-be-used-to-build-this-house-type']
               },
               actions: {
                 items: [
                   {
-                    href: "/housetypes/type-b/what-construction-method-will-be-used-to-build-this-house-type",
+                    href: "/housetypes/type-a-b/what-construction-method-will-be-used-to-build-this-house-type",
                     text: "Change",
                     visuallyHiddenText: ""
                   }
@@ -69,12 +69,12 @@
                 text: "Size"
               },
               value: {
-                text: data['size-of-this-house-type-b']
+                text: data['size-of-this-house-type-a']
               },
               actions: {
                 items: [
                   {
-                    href: "/housetypes/type-b/what-is-the-size-of-this-house-type",
+                    href: "/housetypes/type-a-b/what-is-the-size-of-this-house-type",
                     text: "Change",
                     visuallyHiddenText: ""
                   }
@@ -86,12 +86,12 @@
                 text: "Projected sales value"
               },
               value: {
-                text: data['dales-value-of-house-type-b']
+                text: data['dales-value-of-house-type-a']
               },
               actions: {
                 items: [
                   {
-                    href: "/housetypes/type-b/what-is-the-projected-sales-value-of-this-house-type",
+                    href: "/housetypes/type-a-b/what-is-the-projected-sales-value-of-this-house-type",
                     text: "Change",
                     visuallyHiddenText: ""
                   }
@@ -101,6 +101,14 @@
             
           ]
         }) }}
+
+        <h3 class="govuk-fieldset__legend--m">Save house type B</h3>
+        <p>
+          If you would like to make changes to house type B, you can make edits to the details above before saving and continuing.
+        </p>
+        <p>
+          By continuing, you are confirming you are happy with the details provided above. 
+        </p>
 
 
         <!-- {{ govukRadios({
@@ -125,6 +133,8 @@
             }
           ]
         }) }} -->
+
+
 
         <section class="govuk-!-margin-top-9">
           {{ govukButton({

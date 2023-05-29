@@ -27,7 +27,7 @@ router.post('/housetypes/house-type-a-summary-answer', (req, res) => {
         res.redirect('/housetypes/add-another-house-type')
     }
     else {
-        res.redirect('../cashflow/cashflow-start')
+        res.redirect('../cashflow/cashflow-form')
     }
 })
 
@@ -37,7 +37,7 @@ router.post('/housetypes/add-another-house-type-answer', (req, res) => {
         res.redirect('/housetypes/type-b/what-tenure-is-this-house-type')
     }
     else {
-        res.redirect('/housetypes/house-types-copy-from-a-type')
+        res.redirect('/housetypes/type-a-b/house-type-b-summary')
     }
 })
 

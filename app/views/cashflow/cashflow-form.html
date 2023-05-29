@@ -40,16 +40,65 @@
           </h2>
           <p class="grey-text">Define house types and details about each type.</p>
           <ul class="govuk-prototype-kit-task-list__items">
+            {%if data['dales-value-of-house-type-a'] == undefined %}
             <li class="govuk-prototype-kit-task-list__item">
               <span class="govuk-prototype-kit-task-list__task-name">
                 <a href="/../housetypes/house-types-start" aria-describedby="eligibility-status">
                   Define a house type
                 </a>
               </span>
-              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
+              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="company-information-status">Not started</strong>
             </li>
+            {%endif%}
+
+            {%if data['dales-value-of-house-type-a'] !== undefined %}
+            <li class="govuk-prototype-kit-task-list__item">
+              <span class="govuk-prototype-kit-task-list__task-name">
+                <a href="/../housetypes/type-b/what-tenure-is-this-house-type" aria-describedby="eligibility-status">
+                  Add a new house type
+                </a>
+              </span>
+            </li>
+            {%endif%}
+
+
+            {%if data['dales-value-of-house-type-a'] !== undefined %}
+            <li class="govuk-prototype-kit-task-list__item">
+              <span class="govuk-prototype-kit-task-list__task-name">
+                <a href="/../housetypes/house-types-start" aria-describedby="eligibility-status">
+                  House type A
+                </a>
+              </span>
+              {%if data['dales-value-of-house-type-a'] !== undefined %}
+                <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="company-information-status">Completed</strong>
+              {%endif%}
+              {%if data['dales-value-of-house-type-a'] == undefined %}
+              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="company-information-status">Not started</strong>
+              {%endif%}
+            </li>
+            {%endif%}
+
+            {%if data['dales-value-of-house-type-b'] !== undefined %}
+            <li class="govuk-prototype-kit-task-list__item">
+              <span class="govuk-prototype-kit-task-list__task-name">
+                <a href="/../housetypes/house-types-start" aria-describedby="eligibility-status">
+                  House type B
+                </a>
+              </span>
+              {%if data['dales-value-of-house-type-b'] !== undefined %}
+                <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="company-information-status">Completed</strong>
+              {%endif%}
+              {%if data['dales-value-of-house-type-b'] == undefined %}
+              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="company-information-status">Not started</strong>
+              {%endif%}
+            </li>
+            {%endif%}
+
+
           </ul>
         </li>
+
+
 
         <li>
           <h2 class="govuk-prototype-kit-task-list__section">
