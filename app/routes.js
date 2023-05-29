@@ -31,6 +31,16 @@ router.post('/housetypes/house-type-a-summary-answer', (req, res) => {
     }
 })
 
+router.post('/housetypes/add-another-house-type-answer', (req, res) => {
+    const AddHouserType = req.session.data['how-would-you-like-to-add-another-house-type'];
+    if (AddHouserType == "I would like to create a new house type") {
+        res.redirect('/housetypes/type-b/what-tenure-is-this-house-type')
+    }
+    else {
+        res.redirect('/housetypes/house-types-copy-from-a-type')
+    }
+})
+
 router.get('/tmp', (req, res) => {
     console.log(JSON.stringify(req.session.data))
 })
