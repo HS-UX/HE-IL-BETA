@@ -1,0 +1,54 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Start page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set serviceName %}
+  Revenue
+{% endset%}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back to cashflow",
+  href: "/cashflow/cashflow-form"
+}) }}
+
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Revenue
+      </h1>
+
+      <p>In this section, you’ll need to tell us about any additional income you will receive. This could include additional income from:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>commercial</li>
+        <li>parking</li>
+        <li>rent</li>
+        <li>other sources</li>
+      </ul>
+
+
+      {{ govukButton({
+        text: "Start now",
+        href: "/revenue/revenue-1",
+        isStartButton: true
+      }) }}
+
+
+    </div>
+  </div>
+
+{% endblock %}

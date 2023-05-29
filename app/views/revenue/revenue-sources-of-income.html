@@ -1,0 +1,75 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set serviceName %}
+  Revenue
+{% endset%}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
+          What sources of additional income will you receive?
+        </h1>
+      </legend>
+      <p>
+        Select all that apply.
+      </p>
+
+
+      <form class="form" action="/revenue/revenue-commercial" method="post">
+
+        {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+        {{ govukCheckboxes({
+          name: "income",
+          fieldset: {
+            legend: {
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "Commercial",
+              text: "Commercial"
+            },
+            {
+              value: "Parking",
+              text: "Parking"
+            },
+            {
+              value: "Rent",
+              text: "Rent"
+            },
+            {
+              value: "Other",
+              text: "Other"
+            }
+          ]
+        }) }}
+
+
+        {{ govukButton({
+          text: "Continue",
+          classes: "govuk-!-margin-top-9"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

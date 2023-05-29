@@ -1,0 +1,82 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set serviceName %}
+  Revenue
+{% endset%}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
+          Additional income from other sources
+        </h1>
+      </legend>
+
+
+
+      <form class="form" action="/revenue/revenue-check" method="post">
+        <p class="govuk-heading-m govuk-!-margin-top-9">Total amount of additional income from other sources
+        </p>
+        {{ govukInput({
+          classes: "govuk-input--width-10",
+          id: "ammount-other",
+          name: "ammount-other",
+          value: data['ammount-other'],
+          prefix: {
+            text: "£"
+          },
+          spellcheck: false
+        }) }}
+
+        <p class="govuk-heading-m">Date you will receive additional income
+        </p>
+
+        <section class="input-section">
+          {{ govukInput({
+            label: {
+              text: "Month"
+            },
+            classes: "govuk-input--width-2",
+            id: "other-date-month",
+            name: "other-date-month",
+            value: data['other-date-month']
+            
+          }) }}
+
+
+  
+          {{ govukInput({
+            label: {
+              text: "Year"
+            },
+            classes: "govuk-input--width-4",
+            id: "other-date-year",
+            name: "other-date-year",
+            value: data['other-date-year']
+          }) }}
+        </section>
+
+        {{ govukButton({
+          text: "Continue",
+          classes: "govuk-!-margin-top-9"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
