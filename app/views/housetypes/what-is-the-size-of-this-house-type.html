@@ -4,6 +4,10 @@
   Question page template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
+{% set serviceName %}
+  Define a house type
+{% endset%}
+
 {% block beforeContent %}
   {{ govukBackLink({
   text: "Back",

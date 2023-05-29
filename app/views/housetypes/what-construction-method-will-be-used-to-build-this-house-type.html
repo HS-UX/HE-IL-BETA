@@ -4,6 +4,10 @@
   Question page template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
+{% set serviceName %}
+  Define a house type
+{% endset%}
+
 {% block beforeContent %}
   {{ govukBackLink({
   text: "Back",
@@ -38,7 +42,7 @@
             {
               value: "Traditional",
               text: "Traditional",
-              checked: checked("what-construction-method-will-be-used-to-build-this-house-type", "Open market housing - homes sold directly to homebuyers on the open market Hint text")
+              checked: checked("what-construction-method-will-be-used-to-build-this-house-type", "Traditional")
             },
             {
               value: "Timber frame",

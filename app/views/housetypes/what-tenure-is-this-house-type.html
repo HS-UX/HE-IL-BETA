@@ -4,6 +4,10 @@
   Question page template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
+{% set serviceName %}
+  Define a house type
+{% endset%}
+
 {% block beforeContent %}
   {{ govukBackLink({
   text: "Back",
@@ -37,14 +41,14 @@
           },
           items: [
             {
-              value: "Open market housing - homes sold directly to homebuyers on the open market Hint text",
-              text: "Open market housing - homes sold directly to homebuyers on the open market Hint text",
-              checked: checked("what-tenure-is-this-house-type", "Open market housing - homes sold directly to homebuyers on the open market Hint text")
+              value: "Open market housing - homes sold directly to homebuyers on the open market",
+              text: "Open market housing - homes sold directly to homebuyers on the open market",
+              checked: checked("what-tenure-is-this-house-type", "Open market housing - homes sold directly to homebuyers on the open market")
             },
             {
-              value: "Market rent - homes let directly to tenants Hint text",
-              text: "Market rent - homes let directly to tenants Hint text",
-              checked: checked("what-tenure-is-this-house-type", "Market rent - homes let directly to tenants Hint text")
+              value: "Market rent - homes let directly to tenants",
+              text: "Market rent - homes let directly to tenants",
+              checked: checked("what-tenure-is-this-house-type", "Market rent - homes let directly to tenants")
             },
             {
               value: "Affordable rent - homes sold to a Housing Association or similar, to then be let to eligible tenants at a discount compared to market prices",

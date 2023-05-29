@@ -21,6 +21,16 @@ router.post('/yes-no-confirmation', (req, res) => {
         res.redirect(req.session.data['no-route'])
 })
 
+router.post('/housetypes/house-type-a-summary-answer', (req, res) => {
+    const addNewHouseType = req.session.data['do-you-want-to-add-another-house-type'];
+    if (addNewHouseType == "Yes, add another house type") {
+        res.redirect('/housetypes/add-another-house-type')
+    }
+    else {
+        res.redirect('../cashflow/cashflow-start')
+    }
+})
+
 router.get('/tmp', (req, res) => {
     console.log(JSON.stringify(req.session.data))
 })
