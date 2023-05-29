@@ -49,20 +49,20 @@
 
               {%endif%} -->
               <td class="govuk-table__cell">
-                {%if data['commercial-date-month'] !== "" %}
+                {%if data['commercial-date-month'] !== undefined %}
                 {{data['commercial-date-month']}}/{{data['commercial-date-year']}}
                 {%endif%}
-                {%if data['commercial-date-month'] == "" %}
+                {%if data['commercial-date-month'] == undefined %}
                 -
                 {%endif%}
               
               </td>
               <td class="govuk-table__cell">
-                {%if data['ammount-commercial'] !== "" %}
+                {%if data['ammount-commercial'] !== undefined %}
                 £{{data['ammount-commercial']}}
                 {%endif%}
 
-                {%if data['ammount-commercial'] == "" %}
+                {%if data['ammount-commercial'] == undefined %}
                 -
                 {%endif%}
 
@@ -74,20 +74,20 @@
               <td class="govuk-table__cell">Parking</td>
               <td class="govuk-table__cell">
 
-                {%if data['ammount-date-month'] !== "" %}
+                {%if data['ammount-date-month'] !== undefined %}
                 {{data['parking-date-month']}}/{{data['parking-date-year']}}
                 {%endif%}
-                {%if data['ammount-date-month'] == "" %}
+                {%if data['ammount-date-month'] == undefined %}
                 -
                 {%endif%}
 
               </td>
               <td class="govuk-table__cell">
-                {%if data['ammount-parking'] !== "" %}
+                {%if data['ammount-parking'] !== undefined %}
                 £{{data['ammount-parking']}}
                 {%endif%}
 
-                {%if data['ammount-parking'] == "" %}
+                {%if data['ammount-parking'] == undefined %}
                 -
                 {%endif%}
               </td>
@@ -97,21 +97,21 @@
               <td class="govuk-table__cell">Rent</td>
               <td class="govuk-table__cell">
                 
-                {%if data['rent-date-month'] !== "" %}
+                {%if data['rent-date-month'] !== undefined %}
                 {{data['rent-date-month']}}/{{data['rent-date-year']}}
                 {%endif%}
-                {%if data['rent-date-month'] == "" %}
+                {%if data['rent-date-month'] == undefined %}
                 -
                 {%endif%}
               
               
                 <td class="govuk-table__cell">
                   
-                  {%if data['ammount-rent'] !== "" %}
+                  {%if data['ammount-rent'] !== undefined %}
                   £{{data['ammount-rent']}}
                   {%endif%}
   
-                  {%if data['ammount-rent'] == "" %}
+                  {%if data['ammount-rent'] == undefined %}
                   -
                   {%endif%}
                 
@@ -122,18 +122,18 @@
               <td class="govuk-table__cell">Other</td>
               <td class="govuk-table__cell">
                 
-                {%if data['other-date-month'] !== "" %}
+                {%if data['other-date-month'] !== undefined %}
                 {{data['other-date-month']}}/{{data['other-date-year']}}
                 {%endif%}
-                {%if data['other-date-month'] == "" %}
+                {%if data['other-date-month'] == undefined %}
                 -
                 {%endif%}
               </td>
               <td class="govuk-table__cell">
-                {%if data['ammount-other'] !== "" %}
+                {%if data['ammount-other'] !== undefined %}
                 £{{data['ammount-other']}}
                 {%endif%}
-                {%if data['ammount-other'] == "" %}
+                {%if data['ammount-other'] == undefined %}
                 -
                 {%endif%}
               </td>
