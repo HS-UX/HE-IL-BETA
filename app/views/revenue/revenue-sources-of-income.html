@@ -29,12 +29,13 @@
       </p>
 
 
-      <form class="form" action="/revenue/revenue-commercial" method="post">
+      <form class="form" action="/revenue/revenue-sources-of-income-answer" method="post">
 
         {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 
         {{ govukCheckboxes({
           name: "income",
+          values: data["income"],
           fieldset: {
             legend: {
               isPageHeading: true,
@@ -44,19 +45,23 @@
           items: [
             {
               value: "Commercial",
-              text: "Commercial"
+              text: "Commercial",
+              checked: checked("income", "Commercial")
             },
             {
               value: "Parking",
-              text: "Parking"
+              text: "Parking",
+              checked: checked("income", "Parking")
             },
             {
               value: "Rent",
-              text: "Rent"
+              text: "Rent",
+              checked: checked("income", "Rent")
             },
             {
               value: "Other",
-              text: "Other"
+              text: "Other",
+              checked: checked("income", "Other")
             }
           ]
         }) }}

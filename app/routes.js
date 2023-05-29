@@ -41,6 +41,59 @@ router.post('/housetypes/add-another-house-type-answer', (req, res) => {
     }
 })
 
+
+router.post('/revenue/revenue-sources-of-income-answer', (req, res) => {
+    const income = req.session.data['income']
+    if (income.includes("Commercial")){
+        res.redirect("/revenue/revenue-commercial")
+    } else if (income.includes("Parking")){
+        res.redirect("/revenue/revenue-parking")
+    }   else if (income.includes("Rent")){
+        res.redirect("/revenue/revenue-rent")
+    }  else if (income.includes("Other")){
+        res.redirect("/revenue/revenue-other")
+    } else {
+        res.redirect("/revenue/revenue-check")
+    }
+})
+
+router.post('/revenue/revenue-commercial-answer', (req, res) => {
+    const income = req.session.data['income']
+      if (income.includes("Parking")){
+        res.redirect("/revenue/revenue-parking")
+    }   else if (income.includes("Rent")){
+        res.redirect("/revenue/revenue-rent")
+    }  else if (income.includes("Other")){
+        res.redirect("/revenue/revenue-other")
+    } else {
+        res.redirect("/revenue/revenue-check")
+    }
+})
+
+router.post('/revenue/revenue-parking-answer', (req, res) => {
+    const income = req.session.data['income']
+     if (income.includes("Rent")){
+        res.redirect("/revenue/revenue-rent")
+    }  else if (income.includes("Other")){
+        res.redirect("/revenue/revenue-other")
+    } else {
+        res.redirect("/revenue/revenue-check")
+    }
+})
+
+router.post('/revenue/revenue-rent-answer', (req, res) => {
+    const income = req.session.data['income']
+     if (income.includes("Other")){
+        res.redirect("/revenue/revenue-other")
+    } else {
+        res.redirect("/revenue/revenue-check")
+    }
+})
+
+router.post('/revenue/revenue-other-answer', (req, res) => {
+    res.redirect("/revenue/revenue-check")
+})
+
 router.get('/tmp', (req, res) => {
     console.log(JSON.stringify(req.session.data))
 })
