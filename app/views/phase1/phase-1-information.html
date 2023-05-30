@@ -62,10 +62,10 @@
         ]
       }) }}
 
-      <form class="form" action="#" method="post">
+      <form class="form" action="/phase1/phase-1-information-answer" method="post">
 
         {{ govukRadios({
-          name: "is-this-information-correct?",
+          name: "is-this-information-correct",
           fieldset: {
             legend: {
               text: "Is this information correct?",
@@ -77,12 +77,12 @@
             {
               value: "Yes, the above information is correct",
               text: "Yes, the above information is correct",
-              checked: checked("is-this-information-correct?", "Yes, the above information is correct")
+              checked: checked("is-this-information-correct", "Yes, the above information is correct")
             },
             {
               value: "No, I need to make changes",
               text: "No, I need to make changes",
-              checked: checked("is-this-information-correct?", "No, I need to make changes")
+              checked: checked("is-this-information-correct", "No, I need to make changes")
             }
           ]
         }) }}

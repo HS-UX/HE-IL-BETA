@@ -32,8 +32,8 @@ router.post('/housetypes/house-type-a-summary-answer', (req, res) => {
 })
 
 router.post('/housetypes/add-another-house-type-answer', (req, res) => {
-    const AddHouserType = req.session.data['how-would-you-like-to-add-another-house-type'];
-    if (AddHouserType == "I would like to create a new house type") {
+    const addHouseType = req.session.data['how-would-you-like-to-add-another-house-type'];
+    if (addHouseType == "I would like to create a new house type") {
         res.redirect('/housetypes/type-b/what-tenure-is-this-house-type')
     }
     else {
@@ -92,6 +92,16 @@ router.post('/revenue/revenue-rent-answer', (req, res) => {
 
 router.post('/revenue/revenue-other-answer', (req, res) => {
     res.redirect("/revenue/revenue-check")
+})
+
+router.post('/phase1/phase-1-information-answer', (req, res) => {
+    const phase1information = req.session.data['is-this-information-correct'];
+    if (phase1information == "Yes, the above information is correct") {
+        res.redirect('/phase1/phase-1-house-types')
+    }
+    else {
+        res.redirect('/cashflow/cashflow-intro-5-p1')
+    }
 })
 
 router.get('/tmp', (req, res) => {

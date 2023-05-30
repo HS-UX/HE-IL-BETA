@@ -1,0 +1,55 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Start page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set serviceName %}
+  Define a house type
+{% endset%}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back to cashflow",
+  href: "/cashflow/cashflow-form"
+}) }}
+
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Define a house type
+      </h1>
+
+      <p>Define each house type by providing information about:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>the tenure</li>
+        <li>construction method</li>
+        <li>square footage</li>
+        <li>projected sales value</li>
+      </ul>
+
+      <p>You can add multiple house types.</p>
+
+      {{ govukButton({
+        text: "Start now",
+        href: "/housetypes/type-b/what-tenure-is-this-house-type",
+        isStartButton: true
+      }) }}
+
+
+    </div>
+  </div>
+
+{% endblock %}
