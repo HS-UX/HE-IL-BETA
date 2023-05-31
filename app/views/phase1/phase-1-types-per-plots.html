@@ -1,0 +1,165 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <p>Phase 1</p>
+        <h1 class="govuk-fieldset__heading">
+          House types per plots
+        </h1>
+      </legend>
+
+      <table class="govuk-table">
+        <caption class="govuk-table__caption govuk-table__caption--m">Additional income</caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Plot number</th>
+            <th scope="col" class="govuk-table__header">House type</th>
+            <th scope="col" class="govuk-table__header">Action</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              Plot 1
+            </td>
+            <td class="govuk-table__cell">          
+              {{data['plot-1']}}
+            </td>
+            <td class="govuk-table__cell">
+              <a href="/phase1/phase-1-plots-1-5">Change</a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              Plot 2
+            </td>
+            <td class="govuk-table__cell">          
+              {{data['plot-2']}}
+            </td>
+            <td class="govuk-table__cell">
+              <a href="/phase1/phase-1-plots-1-5">Change</a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              Plot 3
+            </td>
+            <td class="govuk-table__cell">          
+              {{data['plot-3']}}
+            </td>
+            <td class="govuk-table__cell">
+              <a href="/phase1/phase-1-plots-1-5">Change</a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              Plot 4
+            </td>
+            <td class="govuk-table__cell">          
+              {{data['plot-4']}}
+            </td>
+            <td class="govuk-table__cell">
+              <a href="/phase1/phase-1-plots-1-5">Change</a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              Plot 5
+            </td>
+            <td class="govuk-table__cell">          
+              {{data['plot-5']}}
+            </td>
+            <td class="govuk-table__cell">
+              <a href="/phase1/phase-1-plots-1-5">Change</a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              Plot 6
+            </td>
+            <td class="govuk-table__cell">          
+              {{data['plot-5']}}
+            </td>
+            <td class="govuk-table__cell">
+              <a href="/phase1/phase-1-plots-6-10">Change</a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              Plot 7
+            </td>
+            <td class="govuk-table__cell">          
+              {{data['plot-7']}}
+            </td>
+            <td class="govuk-table__cell">
+              <a href="/phase1/phase-1-plots-6-10">Change</a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              Plot 8
+            </td>
+            <td class="govuk-table__cell">          
+              {{data['plot-8']}}
+            </td>
+            <td class="govuk-table__cell">
+              <a href="/phase1/phase-1-plots-6-10">Change</a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              Plot 9
+            </td>
+            <td class="govuk-table__cell">          
+              {{data['plot-9']}}
+            </td>
+            <td class="govuk-table__cell">
+              <a href="/phase1/phase-1-plots-6-10">Change</a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              Plot 10
+            </td>
+            <td class="govuk-table__cell">          
+              {{data['plot-10']}}
+            </td>
+            <td class="govuk-table__cell">
+              <a href="/phase1/phase-1-plots-6-10">Change</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+
+      <form class="form" action="/phase1/phase-1-revenue-details" method="post">
+      <h3 class="govuk-heading-s">Continue</h3>
+      <p>
+       By continuing, you are confirming that any information you have provided is accurate to the best of your knowledge.
+      </p>
+
+        {{ govukButton({
+          text: "Continue",
+          classes: "govuk-!-margin-top-9"
+        }) }}
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

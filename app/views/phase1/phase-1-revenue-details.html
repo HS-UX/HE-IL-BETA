@@ -1,0 +1,56 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Start page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p>Phase 1</p>
+      <h1 class="govuk-heading-xl">
+        Revenue details for phase 1 per plot
+      </h1>
+
+      <p>In the following section, we will ask you to define each plot’s projected:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>building completion date</li>
+        <li>sales date</li>
+      </ul>
+
+      <p>You’ll be able to select multiple plots that are expected to be completed or sold on the same date.</p>
+
+      
+      <p>If there are individual plots that have different completion or sale dates, you will be able to edit this afterwards.</p>
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-top-9",
+        href: "/phase1/phase-1-building-completion-month-1"
+      }) }}
+
+
+
+
+    </div>
+  </div>
+
+{% endblock %}

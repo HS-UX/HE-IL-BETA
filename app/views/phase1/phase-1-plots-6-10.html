@@ -4,6 +4,7 @@
   Question page template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
+
 {% block beforeContent %}
   {{ govukBackLink({
   text: "Back",
@@ -18,45 +19,21 @@
       <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
         <p>Phase 1</p>
         <h1 class="govuk-fieldset__heading">
-          Allocate house types for plots 1-5
+          Allocate house types for plots 6-10
         </h1>
         <p>Homes England refers to a plot as the land that a home is built upon. <br/>
           Select which house type will be allocated to each plot.</p>
       </legend>
 
 
-      <form class="form" action="/phase1/phase-1-plots-6-10" method="post">
+      <form class="form" action="/phase1/phase-1-types-per-plots" method="post">
 
         {{ govukRadios({
           classes: "govuk-radios--inline",
-          name: "plot-1",
+          name: "plot-6",
           fieldset: {
             legend: {
-              text: "Plot 1",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--m"
-            }
-          },
-          items: [
-            {
-              value: "A",
-              text: "House type A",
-              checked: checked("plot-1", "House type ee A")
-            },
-            {
-              value: "House type B",
-              text: "House type B",
-              checked: checked("plot-1", "House type B")
-            }
-          ]
-        }) }}
-
-        {{ govukRadios({
-          classes: "govuk-radios--inline",
-          name: "plot-2",
-          fieldset: {
-            legend: {
-              text: "Plot 2",
+              text: "Plot 6",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--m"
             }
@@ -65,22 +42,22 @@
             {
               value: "House type A",
               text: "House type A",
-              checked: checked("plot-2", "House type A")
+              checked: checked("plot-6", "House type A")
             },
             {
               value: "House type B",
               text: "House type B",
-              checked: checked("plot-2", "House type B")
+              checked: checked("plot-6", "House type B")
             }
           ]
         }) }}
 
         {{ govukRadios({
           classes: "govuk-radios--inline",
-          name: "plot-3",
+          name: "plot-7",
           fieldset: {
             legend: {
-              text: "Plot 3",
+              text: "Plot 7",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--m"
             }
@@ -89,22 +66,22 @@
             {
               value: "House type A",
               text: "House type A",
-              checked: checked("plot-3", "House type A")
+              checked: checked("plot-7", "House type A")
             },
             {
               value: "House type B",
               text: "House type B",
-              checked: checked("plot-3", "House type B")
+              checked: checked("plot-7", "House type B")
             }
           ]
         }) }}
 
         {{ govukRadios({
           classes: "govuk-radios--inline",
-          name: "plot-4",
+          name: "plot-8",
           fieldset: {
             legend: {
-              text: "Plot 4",
+              text: "Plot 8",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--m"
             }
@@ -113,22 +90,22 @@
             {
               value: "House type A",
               text: "House type A",
-              checked: checked("plot-4", "House type A")
+              checked: checked("plot-8", "House type A")
             },
             {
               value: "House type B",
               text: "House type B",
-              checked: checked("plot-4", "House type B")
+              checked: checked("plot-8", "House type B")
             }
           ]
         }) }}
 
         {{ govukRadios({
           classes: "govuk-radios--inline",
-          name: "plot-5",
+          name: "plot-9",
           fieldset: {
             legend: {
-              text: "Plot 5",
+              text: "Plot 9",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--m"
             }
@@ -137,12 +114,36 @@
             {
               value: "House type A",
               text: "House type A",
-              checked: checked("plot-5", "House type A")
+              checked: checked("plot-9", "House type A")
             },
             {
               value: "House type B",
               text: "House type B",
-              checked: checked("plot-5", "House type B")
+              checked: checked("plot-9", "House type B")
+            }
+          ]
+        }) }}
+
+        {{ govukRadios({
+          classes: "govuk-radios--inline",
+          name: "plot-10",
+          fieldset: {
+            legend: {
+              text: "Plot 10",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "House type A",
+              text: "House type A",
+              checked: checked("plot-10", "House type A")
+            },
+            {
+              value: "House type B",
+              text: "House type B",
+              checked: checked("plot-10", "House type B")
             }
           ]
         }) }}
