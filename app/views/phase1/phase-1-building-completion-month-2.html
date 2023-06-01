@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+  Start page template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% set serviceName %}
@@ -29,7 +29,7 @@
       </h1>
 
 
-        <form class="form govuk-!-margin-top-6" action="/phase1/phase-1-building-completion-month-date-1" method="post">
+        <form class="form govuk-!-margin-top-6" action="/phase1/phase-1-building-completion-month-date-2" method="post">
 
           <p>
             Select all plots with the same completion month. You can also select a single plot.<br/>
@@ -47,31 +47,7 @@
               }
             },
             items: [
-              {
-                value: "Plot 1. " + data['plot-1'],
-                text: "Plot 1. " + data['plot-1'],
-                checked: checked("building-completion-month", "Plot 1. " + data['plot-1'])
-              },
-              {
-                value: "Plot 2. " + data['plot-2'],
-                text: "Plot 2. " + data['plot-2'],
-                checked: checked("building-completion-month", "Plot 2. " + data['plot-2'])
-              },
-              {
-                value: "Plot 3. " + data['plot-3'],
-                text: "Plot 3. " + data['plot-3'],
-                checked: checked("building-completion-month", "Plot 3. " + data['plot-3'])
-              },
-              {
-                value: "Plot 4. " + data['plot-4'],
-                text: "Plot 4. " + data['plot-4'],
-                checked: checked("building-completion-month", "Plot 4. " + data['plot-4'])
-              },
-              {
-                value: "Plot 5. " + data['plot-5'],
-                text: "Plot 5. " + data['plot-5'],
-                checked: checked("building-completion-month", "Plot 5. " + data['plot-5'])
-              },
+             
               {
                 value: "Plot 6. " + data['plot-6'],
                 text: "Plot 6. " + data['plot-6'],

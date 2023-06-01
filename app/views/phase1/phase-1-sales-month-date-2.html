@@ -22,7 +22,7 @@
      
         <p>Phase 1</p>
         <h1 class="govuk-heading-xl">
-          Projected building completion month
+          Projected sales month
         </h1>
         <p class="govuk-body-l">
           Plot 1 ({{data['plot-1']}}), Plot 2 ({{data['plot-1']}}), Plot 3 ({{data['plot-1']}}), Plot 4 ({{data['plot-1']}}) ,Plot 5 ({{data['plot-1']}})
@@ -32,20 +32,20 @@
 
 
 
-      <form class="form" action="/phase1/phase-1-building-completion-month-2" method="post">
+      <form class="form" action="/phase1/phase-1-sales-month-summary" method="post">
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
-        <h2 class="govuk-table__caption--s">Projected building completion date</h2>
-        <p>Enter the projected building completion date.</p>
+        <h2 class="govuk-table__caption--s">Projected sales date</h2>
+        <p>Enter the projected sales date.</p>
         <section class="input-section">
           {{ govukInput({
             label: {
               text: "Month"
             },
             classes: "govuk-input--width-2",
-            id: "phase-1-building-completion-month",
-            name: "phase-1-building-completion-month",
-            value: data['phase-1-building-completion-month']
+            id: "phase-1-sales-month-2",
+            name: "phase-1-sales-month-2",
+            value: data['phase-1-sales-month-2']
             
           }) }}
   
@@ -54,9 +54,9 @@
               text: "Year"
             },
             classes: "govuk-input--width-4",
-            id: "phase-1-building-completion-year",
-            name: "phase-1-building-completion-year",
-            value: data['phase-1-building-completion-year']
+            id: "phase-1-sales-year-2",
+            name: "phase-1-sales-year-2",
+            value: data['phase-1-sales-year-2']
           }) }}
         </section>
 

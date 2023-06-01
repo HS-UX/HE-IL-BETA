@@ -1,13 +1,12 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+  Start page template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% set serviceName %}
   Phase 1
 {% endset%}
-
 
 
 {% block beforeContent %}
@@ -25,21 +24,22 @@
     <div class="govuk-grid-column-two-thirds">
       <p>Phase 1</p>
       <h1 class="govuk-heading-xl">
-        Projected building completion month
+        Projected sales month
       </h1>
 
 
-        <form class="form govuk-!-margin-top-6" action="/phase1/phase-1-building-completion-month-date-1" method="post">
+        <form class="form govuk-!-margin-top-6" action="/phase1/phase-1-sales-month-date-1" method="post">
 
           <p>
-            Select all plots with the same completion month. You can also select a single plot.<br/>
+
+            Select all plots with the same forecasted sales month. You can also select a single plot.<br/>
             This process will be repeated until you have told us the building completion month of all plots.
           </p>
   
           {{ govukCheckboxes({
-            name: "building-completion-month",
+            name: "sales-month",
             
-            values: data["building-completion-month"],
+            values: data["sales-month"],
             fieldset: {
               legend: {
                 isPageHeading: false,
@@ -50,52 +50,52 @@
               {
                 value: "Plot 1. " + data['plot-1'],
                 text: "Plot 1. " + data['plot-1'],
-                checked: checked("building-completion-month", "Plot 1. " + data['plot-1'])
+                checked: checked("sales-month", "Plot 1. " + data['plot-1'])
               },
               {
                 value: "Plot 2. " + data['plot-2'],
                 text: "Plot 2. " + data['plot-2'],
-                checked: checked("building-completion-month", "Plot 2. " + data['plot-2'])
+                checked: checked("sales-month", "Plot 2. " + data['plot-2'])
               },
               {
                 value: "Plot 3. " + data['plot-3'],
                 text: "Plot 3. " + data['plot-3'],
-                checked: checked("building-completion-month", "Plot 3. " + data['plot-3'])
+                checked: checked("sales-month", "Plot 3. " + data['plot-3'])
               },
               {
                 value: "Plot 4. " + data['plot-4'],
                 text: "Plot 4. " + data['plot-4'],
-                checked: checked("building-completion-month", "Plot 4. " + data['plot-4'])
+                checked: checked("sales-month", "Plot 4. " + data['plot-4'])
               },
               {
                 value: "Plot 5. " + data['plot-5'],
                 text: "Plot 5. " + data['plot-5'],
-                checked: checked("building-completion-month", "Plot 5. " + data['plot-5'])
+                checked: checked("sales-month", "Plot 5. " + data['plot-5'])
               },
               {
                 value: "Plot 6. " + data['plot-6'],
                 text: "Plot 6. " + data['plot-6'],
-                checked: checked("building-completion-month", "Plot 6. " + data['plot-6'])
+                checked: checked("sales-month", "Plot 6. " + data['plot-6'])
               },
               {
                 value: "Plot 7. " + data['plot-7'],
                 text: "Plot 7. " + data['plot-7'],
-                checked: checked("building-completion-month", "Plot 7. " + data['plot-7'])
+                checked: checked("sales-month", "Plot 7. " + data['plot-7'])
               },
               {
                 value: "Plot 8. " + data['plot-8'],
                 text: "Plot 8. " + data['plot-8'],
-                checked: checked("building-completion-month", "Plot 8. " + data['plot-8'])
+                checked: checked("sales-month", "Plot 8. " + data['plot-8'])
               },
               {
                 value: "Plot 9. " + data['plot-9'],
                 text: "Plot 9. " + data['plot-9'],
-                checked: checked("building-completion-month", "Plot 9. " + data['plot-9'])
+                checked: checked("sales-month", "Plot 9. " + data['plot-9'])
               },
               {
                 value: "Plot 10. " + data['plot-10'],
                 text: "Plot 10. " + data['plot-10'],
-                checked: checked("building-completion-month", "Plot 10. " + data['plot-10'])
+                checked: checked("sales-month", "Plot 10. " + data['plot-10'])
               }
             ]
           }) }}

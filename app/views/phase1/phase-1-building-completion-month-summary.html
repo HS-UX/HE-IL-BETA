@@ -20,18 +20,19 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
         <p>Phase 1</p>
-        <h1 class="govuk-fieldset__heading">
-          House types per plots
+        <h1 class="govuk-heading-xl">
+          Building completion months
         </h1>
-      </legend>
+
+        <p>You can review and edit each plot’s completion date.</p>
 
       <table class="govuk-table">
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
             <th scope="col" class="govuk-table__header">Plot number</th>
             <th scope="col" class="govuk-table__header">House type</th>
+            <th scope="col" class="govuk-table__header">Completion date</th>
             <th scope="col" class="govuk-table__header">Action</th>
           </tr>
         </thead>
@@ -44,7 +45,10 @@
               {{data['plot-1']}}
             </td>
             <td class="govuk-table__cell">
-              <a href="/phase1/phase-1-plots-1-5">Change</a>
+              {{data['phase-1-building-completion-month']}}/{{data['phase-1-building-completion-year']}}
+            </td>
+            <td class="govuk-table__cell">
+              <a href="/phase1/phase-1-building-completion-month-date-1">Change</a>
             </td>
           </tr>
           <tr class="govuk-table__row">
@@ -55,7 +59,10 @@
               {{data['plot-2']}}
             </td>
             <td class="govuk-table__cell">
-              <a href="/phase1/phase-1-plots-1-5">Change</a>
+              {{data['phase-1-building-completion-month']}}/{{data['phase-1-building-completion-year']}}
+            </td>
+            <td class="govuk-table__cell">
+              <a href="/phase1/phase-1-building-completion-month-date-1">Change</a>
             </td>
           </tr>
           <tr class="govuk-table__row">
@@ -66,7 +73,10 @@
               {{data['plot-3']}}
             </td>
             <td class="govuk-table__cell">
-              <a href="/phase1/phase-1-plots-1-5">Change</a>
+              {{data['phase-1-building-completion-month']}}/{{data['phase-1-building-completion-year']}}
+            </td>
+            <td class="govuk-table__cell">
+              <a href="/phase1/phase-1-building-completion-month-date-1">Change</a>
             </td>
           </tr>
           <tr class="govuk-table__row">
@@ -77,7 +87,10 @@
               {{data['plot-4']}}
             </td>
             <td class="govuk-table__cell">
-              <a href="/phase1/phase-1-plots-1-5">Change</a>
+              {{data['phase-1-building-completion-month']}}/{{data['phase-1-building-completion-year']}}
+            </td>
+            <td class="govuk-table__cell">
+              <a href="/phase1/phase-1-building-completion-month-date-1">Change</a>
             </td>
           </tr>
           <tr class="govuk-table__row">
@@ -88,7 +101,10 @@
               {{data['plot-5']}}
             </td>
             <td class="govuk-table__cell">
-              <a href="/phase1/phase-1-plots-1-5">Change</a>
+              {{data['phase-1-building-completion-month']}}/{{data['phase-1-building-completion-year']}}
+            </td>
+            <td class="govuk-table__cell">
+              <a href="/phase1/phase-1-building-completion-month-date-1">Change</a>
             </td>
           </tr>
           <tr class="govuk-table__row">
@@ -96,10 +112,13 @@
               Plot 6
             </td>
             <td class="govuk-table__cell">          
-              {{data['plot-5']}}
+              {{data['plot-6']}}
             </td>
             <td class="govuk-table__cell">
-              <a href="/phase1/phase-1-plots-6-10">Change</a>
+              {{data['phase-1-building-completion-month-2']}}/{{data['phase-1-building-completion-year-2']}}
+            </td>
+            <td class="govuk-table__cell">
+              <a href="/phase1/phase-1-building-completion-month-date-2">Change</a>
             </td>
           </tr>
           <tr class="govuk-table__row">
@@ -110,7 +129,10 @@
               {{data['plot-7']}}
             </td>
             <td class="govuk-table__cell">
-              <a href="/phase1/phase-1-plots-6-10">Change</a>
+              {{data['phase-1-building-completion-month-2']}}/{{data['phase-1-building-completion-year-2']}}
+            </td>
+            <td class="govuk-table__cell">
+              <a href="/phase1/phase-1-building-completion-month-date-2">Change</a>
             </td>
           </tr>
           <tr class="govuk-table__row">
@@ -121,7 +143,10 @@
               {{data['plot-8']}}
             </td>
             <td class="govuk-table__cell">
-              <a href="/phase1/phase-1-plots-6-10">Change</a>
+              {{data['phase-1-building-completion-month-2']}}/{{data['phase-1-building-completion-year-2']}}
+            </td>
+            <td class="govuk-table__cell">
+              <a href="/phase1/phase-1-building-completion-month-date-2">Change</a>
             </td>
           </tr>
           <tr class="govuk-table__row">
@@ -132,7 +157,10 @@
               {{data['plot-9']}}
             </td>
             <td class="govuk-table__cell">
-              <a href="/phase1/phase-1-plots-6-10">Change</a>
+              {{data['phase-1-building-completion-month-2']}}/{{data['phase-1-building-completion-year-2']}}
+            </td>
+            <td class="govuk-table__cell">
+              <a href="/phase1/phase-1-building-completion-month-date-2">Change</a>
             </td>
           </tr>
           <tr class="govuk-table__row">
@@ -143,18 +171,18 @@
               {{data['plot-10']}}
             </td>
             <td class="govuk-table__cell">
-              <a href="/phase1/phase-1-plots-6-10">Change</a>
+              {{data['phase-1-building-completion-month-2']}}/{{data['phase-1-building-completion-year-2']}}
+            </td>
+            <td class="govuk-table__cell">
+              <a href="/phase1/phase-1-building-completion-month-date-2">Change</a>
             </td>
           </tr>
+          
         </tbody>
       </table>
 
 
-      <form class="form" action="/phase1/phase-1-revenue-details" method="post">
-      <h3 class="govuk-heading-s">Continue</h3>
-      <p>
-       By continuing, you are confirming that any information you have provided is accurate to the best of your knowledge.
-      </p>
+      <form class="form" action="/phase1/phase-1-sales-month-1" method="post">
 
         {{ govukButton({
           text: "Continue",
