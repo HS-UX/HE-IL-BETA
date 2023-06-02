@@ -84,6 +84,8 @@
         ]
       }) }}
 
+      {% if data['are-you-delivering-this-project-in-phases?'] == "Yes, this project will be delivered in multiple phases"  %}
+
       {{ govukSummaryList({
         rows: [
           {
@@ -144,6 +146,8 @@
           }
         ]
       }) }}
+
+      {% endif %}
 
       {{ govukSummaryList({
         rows: [

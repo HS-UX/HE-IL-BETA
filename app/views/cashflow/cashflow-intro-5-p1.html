@@ -82,10 +82,24 @@
 
 
 
-        {{ govukButton({
-          text: "Continue",
-          classes: "govuk-!-margin-top-9"
-        }) }}
+ 
+
+        {% if data['are-you-delivering-this-project-in-phases?'] !== "Yes, this project will be delivered in multiple phases"  %}
+          {{ govukButton({
+            text: "Continue",
+            classes: "govuk-!-margin-top-9",
+            href: "/cashflow/cashflow-multiple"
+          }) }}
+
+        {% endif %}
+
+        {% if data['are-you-delivering-this-project-in-phases?'] == "Yes, this project will be delivered in multiple phases"  %}
+          {{ govukButton({
+            text: "Continue",
+            classes: "govuk-!-margin-top-9"
+          }) }}
+
+        {% endif %}
 
       </form>
 

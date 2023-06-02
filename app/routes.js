@@ -21,6 +21,17 @@ router.post('/yes-no-confirmation', (req, res) => {
         res.redirect(req.session.data['no-route'])
 })
 
+
+router.post('/cashflow/cashflow-intro-2-answer', (req, res) => {
+    const isPhases = req.session.data['are-you-delivering-this-project-in-phases?'];
+    if (isPhases == "Yes, this project will be delivered in multiple phases") {
+        res.redirect('/cashflow/cashflow-intro-3')
+    }
+    else {
+        res.redirect('/cashflow/cashflow-intro-5-p1')
+    }
+})
+
 router.post('/housetypes/house-type-a-summary-answer', (req, res) => {
     const addNewHouseType = req.session.data['do-you-want-to-add-another-house-type'];
     if (addNewHouseType == "Yes, add another house type") {
