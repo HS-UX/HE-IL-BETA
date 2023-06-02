@@ -33,6 +33,18 @@
 
         {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 
+        {% set otherHtml %}
+        {{ govukInput({
+          id: "ammount-other",
+          name: "ammount-other",
+          spellcheck: false,
+          classes: "govuk-!-width-one-third",
+          label: {
+            text: "What is the name of this additional income?"
+          }
+        }) }}
+        {% endset -%}
+
         {{ govukCheckboxes({
           name: "income",
           values: data["income"],
@@ -59,12 +71,20 @@
               checked: checked("income", "Rent")
             },
             {
+              divider: "or"
+            },
+            {
               value: "Other",
               text: "Other",
-              checked: checked("income", "Other")
+              checked: checked("income", "Other"),
+              conditional: {
+                html: otherHtml
+              }
             }
           ]
         }) }}
+
+
 
 
         {{ govukButton({
