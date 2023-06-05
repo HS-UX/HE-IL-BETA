@@ -8,10 +8,6 @@
   Provide cashflow information - project 1
 {% endset%}
 
-{% if data['phase-1-homes'] == undefined %}
-data['phase-1-homes']= "test"
-{% endif %}
-
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back",

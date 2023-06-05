@@ -32,6 +32,7 @@ router.post('/cashflow/cashflow-intro-2-answer', (req, res) => {
     }
 })
 
+
 router.post('/housetypes/house-type-a-summary-answer', (req, res) => {
     const addNewHouseType = req.session.data['do-you-want-to-add-another-house-type'];
     if (addNewHouseType == "Yes, add another house type") {
@@ -59,7 +60,6 @@ router.post('/revenue/revenue-1-answer', (req, res) => {
     } else {
         res.redirect("/revenue/revenue-check")
     }
-
 })
 
 
