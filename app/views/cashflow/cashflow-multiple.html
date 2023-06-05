@@ -8,6 +8,10 @@
   Provide cashflow information - project 1
 {% endset%}
 
+{% if data['phase-1-homes'] == undefined %}
+data['phase-1-homes']= "test"
+{% endif %}
+
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back",
@@ -69,7 +73,7 @@
               text: "Homes"
             },
             value: {
-              text: data['phase-1-homes'] 
+              text: data['phase-1-homes']
             },
             actions: {
               items: [
@@ -159,7 +163,7 @@
               text: "Homes to be built"
             },
             value: {
-              text: "20"
+              text: "10"
             },
             actions: {
               items: [

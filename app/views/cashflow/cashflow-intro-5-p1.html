@@ -30,7 +30,14 @@
 
 
 
+      {% if data['are-you-delivering-this-project-in-phases?'] !== "Yes, this project will be delivered in multiple phases"  %}
+      <form class="form" action="/cashflow/cashflow-multiple" method="post">
+      {% endif%}
+
+      {% if data['are-you-delivering-this-project-in-phases?'] == "Yes, this project will be delivered in multiple phases"  %}
       <form class="form" action="/cashflow/cashflow-intro-5-p2" method="post">
+      {% endif%}
+
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
         <h2 class="govuk-table__caption--m">Start date</h2>
@@ -81,25 +88,12 @@
         </section>
 
 
-
- 
-
-        {% if data['are-you-delivering-this-project-in-phases?'] !== "Yes, this project will be delivered in multiple phases"  %}
-          {{ govukButton({
-            text: "Continue",
-            classes: "govuk-!-margin-top-9",
-            href: "/cashflow/cashflow-multiple"
-          }) }}
-
-        {% endif %}
-
-        {% if data['are-you-delivering-this-project-in-phases?'] == "Yes, this project will be delivered in multiple phases"  %}
           {{ govukButton({
             text: "Continue",
             classes: "govuk-!-margin-top-9"
           }) }}
 
-        {% endif %}
+
 
       </form>
 

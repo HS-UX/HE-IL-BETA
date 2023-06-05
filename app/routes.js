@@ -52,6 +52,16 @@ router.post('/housetypes/add-another-house-type-answer', (req, res) => {
     }
 })
 
+router.post('/revenue/revenue-1-answer', (req, res) => {
+    const addIncome = req.session.data['additional-income'];
+    if(addIncome == "Yes, I’d like to add details of additional income") {
+        res.redirect("/revenue/revenue-sources-of-income")
+    } else {
+        res.redirect("/revenue/revenue-check")
+    }
+
+})
+
 
 router.post('/revenue/revenue-sources-of-income-answer', (req, res) => {
     const income = req.session.data['income']
@@ -64,6 +74,7 @@ router.post('/revenue/revenue-sources-of-income-answer', (req, res) => {
      } else {
         res.redirect("/revenue/revenue-check")
     }
+
 })
 
 router.post('/revenue/revenue-commercial-answer', (req, res) => {
