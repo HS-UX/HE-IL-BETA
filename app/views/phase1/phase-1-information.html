@@ -25,7 +25,50 @@
         </h1>
       </legend>
 
+      {% if data['phase-1-homes'] == undefinded %}
+      {{ govukTable({
+
+        captionClasses: "govuk-table__caption--m",
+        firstCellIsHeader: true,
+        head: [
+          {
+            text: ""
+          },
+          {
+            text: ""
+          }
+        ],
+        rows: [
+          [
+            {
+              text: "Start date"
+            },
+            {
+              text: data['phase-1-start-month'] + "/" + data['phase-1-start-year']
+            }
+          ],
+          [
+          {
+            text: "Completion date"
+          },
+          {
+            text: data['phase-1-completion-month'] + "/" + data['phase-1-completion-year']
+          }
+        ]
+        ,
+        [
+          {
+            text: "Plots"
+          },
+          {
+            text: 10
+          }
+        ]
+        ]
+      }) }}
+      {% endif %}     
       
+      {% if data['phase-1-homes'] !== undefinded %}
 
       {{ govukTable({
 
@@ -67,6 +110,8 @@
         ]
         ]
       }) }}
+
+      {% endif %}
 
       <form class="form" action="/phase1/phase-1-information-answer" method="post">
 
