@@ -1,82 +1,73 @@
-{% extends "layouts/main.html" %}
+{% extends "layouts/main.html" %} {% block pageTitle %} Question page template –
+{{ serviceName }} – GOV.UK Prototype Kit {% endblock %} {% set serviceName %}
+Revenue {% endset%} {% block beforeContent %} {{ govukBackLink({ text: "Back",
+href: "javascript:window.history.back()" }) }} {% endblock %} {% block content
+%}
 
-{% block pageTitle %}
-  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
-{% endblock %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        Additional income from commercial units
+      </h1>
+    </legend>
 
-{% set serviceName %}
-  Revenue
-{% endset%}
+    <form
+      class="form"
+      action="/revenue/revenue-commercial-answer"
+      method="post"
+    >
+      <p class="govuk-heading-m govuk-!-margin-top-9">
+        Total amount of additional income from commercial units
+      </p>
 
-{% block beforeContent %}
-  {{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
-{% endblock %}
+      <div class="govuk-form-group">
+        <div class="govuk-input__wrapper">
+          <div class="govuk-input__prefix" aria-hidden="true">£</div>
+          <input
+            class="govuk-input govuk-input--width-10"
+            id="ammount-commercial"
+            name="ammount-commercial"
+            type="text"
+            spellcheck="false"
+          />
+        </div>
+      </div>
 
-{% block content %}
+      <p class="govuk-heading-m">Date you will receive additional income</p>
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-        <h1 class="govuk-fieldset__heading">   
-            Additional income from commercial units
-        </h1>
-      </legend>
+      <section class="input-section">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="commercial-date-month"> Month </label>
 
+          <input
+            class="govuk-input govuk-input--width-2"
+            id="commercial-date-month"
+            name="commercial-date-month"
+            type="text"
+          />
+        </div>
 
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="commercial-date-year"> Year </label>
 
-      <form class="form" action="/revenue/revenue-commercial-answer" method="post">
-        <p class="govuk-heading-m govuk-!-margin-top-9">Total amount of additional  income from commercial units
-        </p>
-        {{ govukInput({
-          classes: "govuk-input--width-10",
-          id: "ammount-commercial",
-          name: "ammount-commercial",
-          value: data['ammount-commercial'],
-          prefix: {
-            text: "£"
-          },
-          spellcheck: false
-        }) }}
+          <input
+            class="govuk-input govuk-input--width-4"
+            id="commercial-date-year"
+            name="commercial-date-year"
+            type="text"
+          />
+        </div>
+      </section>
 
-        <p class="govuk-heading-m">Date you will receive additional income
-        </p>
-
-        <section class="input-section">
-          {{ govukInput({
-            label: {
-              text: "Month"
-            },
-            classes: "govuk-input--width-2",
-            id: "commercial-date-month",
-            name: "commercial-date-month",
-            value: data['commercial-date-month']
-            
-          }) }}
-
-
-  
-          {{ govukInput({
-            label: {
-              text: "Year"
-            },
-            classes: "govuk-input--width-4",
-            id: "commercial-date-year",
-            name: "commercial-date-year",
-            value: data['commercial-date-year']
-          }) }}
-        </section>
-
-        {{ govukButton({
-          text: "Continue",
-          classes: "govuk-!-margin-top-9"
-        }) }}
-
-      </form>
-
-    </div>
+      <button
+        class="govuk-button govuk-!-margin-top-9"
+        data-module="govuk-button"
+      >
+        Continue
+      </button>
+    </form>
   </div>
+</div>
 
 {% endblock %}

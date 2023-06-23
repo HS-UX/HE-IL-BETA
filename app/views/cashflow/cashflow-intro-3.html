@@ -1,61 +1,43 @@
-{% extends "layouts/main.html" %}
+{% extends "layouts/main.html" %} {% block pageTitle %} Question page template –
+{{ serviceName }} – GOV.UK Prototype Kit {% endblock %} {% set serviceName %}
+Provide cashflow information - project 1 {% endset%} {% block beforeContent %}
+{{ govukBackLink({ text: "Back", href: "javascript:window.history.back()" }) }}
+{% endblock %} {% block content %}
 
-{% block pageTitle %}
-  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
-{% endblock %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        How many phases are you delivering this project in?
+      </h1>
+    </legend>
+    <p>
+      Enter how many phases you plan to deliver this site in. Enter how many
+      phases you plan to deliver this project in.
+    </p>
 
-{% set serviceName %}
-  Provide cashflow information - project 1
-{% endset%}
+    <form class="form" action="/cashflow/cashflow-intro-4" method="post">
+      <div class="govuk-form-group">
+        <div class="govuk-input__wrapper">
+          <input
+            class="govuk-input govuk-input--width-5"
+            id="number-of-phases"
+            name="number-of-phases"
+            type="text"
+            spellcheck="false"
+          />
+          <div class="govuk-input__suffix" aria-hidden="true">phases</div>
+        </div>
+      </div>
 
-{% block beforeContent %}
-  {{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
-{% endblock %}
-
-{% block content %}
-
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-        <h1 class="govuk-fieldset__heading">
-          How many phases are you delivering this project in?
-        </h1>
-      </legend>
-      <p>Enter how many phases you plan to deliver this site in.
-        Enter how many phases you plan to deliver this project in.
-      </p>
-
-
-      <form class="form" action="/cashflow/cashflow-intro-4" method="post">
-
-        {% from "govuk/components/input/macro.njk" import govukInput %}
-
-        {{ govukInput({
-          label: {
-            text: ""
-          },
-          classes: "govuk-input--width-5",
-          id: "number-of-phases",
-          name: "number-of-phases",
-          value: data['number-of-phases'],
-          suffix: {
-            text: "phases"
-          },
-          spellcheck: false
-        }) }}
-
-
-        {{ govukButton({
-          text: "Continue",
-          classes: "govuk-!-margin-top-9"
-        }) }}
-
-      </form>
-
-    </div>
+      <button
+        class="govuk-button govuk-!-margin-top-9"
+        data-module="govuk-button"
+      >
+        Continue
+      </button>
+    </form>
   </div>
+</div>
 
 {% endblock %}

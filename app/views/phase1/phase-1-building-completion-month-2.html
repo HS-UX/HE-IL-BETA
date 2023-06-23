@@ -1,96 +1,119 @@
-{% extends "layouts/main.html" %}
+{% extends "layouts/main.html" %} {% block pageTitle %} Start page template – {{
+serviceName }} – GOV.UK Prototype Kit {% endblock %} {% set serviceName %} Phase
+1 {% endset%} {% block beforeContent %} {{ govukBackLink({ text: "Back", href:
+"javascript:window.history.back()" }) }} {% endblock %} {% block content %}
 
-{% block pageTitle %}
-  Start page template – {{ serviceName }} – GOV.UK Prototype Kit
-{% endblock %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <p>Phase 1</p>
+    <h1 class="govuk-heading-xl">Projected building completion month</h1>
 
-{% set serviceName %}
-  Phase 1
-{% endset%}
+    <form
+      class="form govuk-!-margin-top-6"
+      action="/phase1/phase-1-building-completion-month-date-2"
+      method="post"
+    >
+      <p>
+        Select all plots with the same completion month. You can also select a
+        single plot.<br />
+        This process will be repeated until you have told us the building
+        completion month of all plots.
+      </p>
 
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input
+                class="govuk-checkboxes__input"
+                id="building-completion-month"
+                name="building-completion-month"
+                type="checkbox"
+                value="Plot 6. House type A"
+              />
+              <label
+                class="govuk-label govuk-checkboxes__label"
+                for="building-completion-month"
+              >
+                Plot 6. House type A
+              </label>
+            </div>
 
+            <div class="govuk-checkboxes__item">
+              <input
+                class="govuk-checkboxes__input"
+                id="building-completion-month-2"
+                name="building-completion-month"
+                type="checkbox"
+                value="Plot 7. House type B"
+              />
+              <label
+                class="govuk-label govuk-checkboxes__label"
+                for="building-completion-month-2"
+              >
+                Plot 7. House type B
+              </label>
+            </div>
 
-{% block beforeContent %}
-  {{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
+            <div class="govuk-checkboxes__item">
+              <input
+                class="govuk-checkboxes__input"
+                id="building-completion-month-3"
+                name="building-completion-month"
+                type="checkbox"
+                value="Plot 8. House type A"
+              />
+              <label
+                class="govuk-label govuk-checkboxes__label"
+                for="building-completion-month-3"
+              >
+                Plot 8. House type A
+              </label>
+            </div>
 
+            <div class="govuk-checkboxes__item">
+              <input
+                class="govuk-checkboxes__input"
+                id="building-completion-month-4"
+                name="building-completion-month"
+                type="checkbox"
+                value="Plot 9. House type B"
+              />
+              <label
+                class="govuk-label govuk-checkboxes__label"
+                for="building-completion-month-4"
+              >
+                Plot 9. House type B
+              </label>
+            </div>
 
-{% endblock %}
+            <div class="govuk-checkboxes__item">
+              <input
+                class="govuk-checkboxes__input"
+                id="building-completion-month-5"
+                name="building-completion-month"
+                type="checkbox"
+                value="Plot 10. House type A"
+              />
+              <label
+                class="govuk-label govuk-checkboxes__label"
+                for="building-completion-month-5"
+              >
+                Plot 10. House type A
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
 
-{% block content %}
-
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <p>Phase 1</p>
-      <h1 class="govuk-heading-xl">
-        Projected building completion month
-      </h1>
-
-
-        <form class="form govuk-!-margin-top-6" action="/phase1/phase-1-building-completion-month-date-2" method="post">
-
-          <p>
-            Select all plots with the same completion month. You can also select a single plot.<br/>
-            This process will be repeated until you have told us the building completion month of all plots.
-          </p>
-  
-          {{ govukCheckboxes({
-            name: "building-completion-month",
-            
-            values: data["building-completion-month"],
-            fieldset: {
-              legend: {
-                isPageHeading: false,
-                classes: "govuk-fieldset__legend--l"
-              }
-            },
-            items: [
-             
-              {
-                value: "Plot 6. " + data['plot-6'],
-                text: "Plot 6. " + data['plot-6'],
-                checked: checked("building-completion-month", "Plot 6. " + data['plot-6'])
-              },
-              {
-                value: "Plot 7. " + data['plot-7'],
-                text: "Plot 7. " + data['plot-7'],
-                checked: checked("building-completion-month", "Plot 7. " + data['plot-7'])
-              },
-              {
-                value: "Plot 8. " + data['plot-8'],
-                text: "Plot 8. " + data['plot-8'],
-                checked: checked("building-completion-month", "Plot 8. " + data['plot-8'])
-              },
-              {
-                value: "Plot 9. " + data['plot-9'],
-                text: "Plot 9. " + data['plot-9'],
-                checked: checked("building-completion-month", "Plot 9. " + data['plot-9'])
-              },
-              {
-                value: "Plot 10. " + data['plot-10'],
-                text: "Plot 10. " + data['plot-10'],
-                checked: checked("building-completion-month", "Plot 10. " + data['plot-10'])
-              }
-            ]
-          }) }}
-  
-  
-          {{ govukButton({
-            text: "Continue",
-            classes: "govuk-!-margin-top-9"
-          }) }}
-  
-        </form>
-
-
-
-
-
-
-
-    </div>
+      <button
+        class="govuk-button govuk-!-margin-top-9"
+        data-module="govuk-button"
+      >
+        Continue
+      </button>
+    </form>
   </div>
+</div>
 
 {% endblock %}

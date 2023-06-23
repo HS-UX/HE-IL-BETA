@@ -1,99 +1,82 @@
-{% extends "layouts/main.html" %}
+{% extends "layouts/main.html" %} {% block pageTitle %} Question page template –
+{{ serviceName }} – GOV.UK Prototype Kit {% endblock %} {% set serviceName %}
+Provide cashflow information - project 1 {% endset%} {% block beforeContent %}
+{{ govukBackLink({ text: "Back", href: "javascript:window.history.back()" }) }}
+{% endblock %} {% block content %}
 
-{% block pageTitle %}
-  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
-{% endblock %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">Homes per phase</h1>
+    </legend>
 
-{% set serviceName %}
-  Provide cashflow information - project 1
-{% endset%}
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header"></th>
 
-{% block beforeContent %}
-  {{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
-{% endblock %}
+          <th scope="col" class="govuk-table__header"></th>
+        </tr>
+      </thead>
 
-{% block content %}
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Total number of homes</th>
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-        <h1 class="govuk-fieldset__heading">
-          Homes per phase
-        </h1>
-      </legend>
+          <td class="govuk-table__cell">10</td>
+        </tr>
+      </tbody>
+    </table>
 
-      {{ govukTable({
+    <form class="form" action="/cashflow/cashflow-intro-5-p1" method="post">
+      <h2 class="govuk-table__caption--m">Phase 1</h2>
 
-        captionClasses: "govuk-table__caption--m",
-        firstCellIsHeader: true,
-        head: [
-          {
-            text: ""
-          },
-          {
-            text: ""
-          }
-        ],
-        rows: [
-          [
-          {
-            text: "Total number of homes"
-          },
-          {
-            text: "10"
-          }
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="phase-1-homes">
+          Enter the number of homes per phase.
+        </label>
 
-          ]
-        ]
-      }) }}
+        <div class="govuk-input__wrapper">
+          <input
+            class="govuk-input govuk-input--width-5"
+            id="phase-1-homes"
+            name="phase-1-homes"
+            type="text"
+            spellcheck="false"
+            value="2"
+          />
+          <div class="govuk-input__suffix" aria-hidden="true">homes</div>
+        </div>
+      </div>
 
+      <h2 class="govuk-table__caption--m">Phase 2</h2>
 
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="phase-2-homes">
+          Enter the number of homes per phase.
+        </label>
 
-      <form class="form" action="/cashflow/cashflow-intro-5-p1" method="post">
+        <div class="govuk-input__wrapper">
+          <input
+            class="govuk-input govuk-input--width-5"
+            id="phase-2-homes"
+            name="phase-2-homes"
+            type="text"
+            spellcheck="false"
+            value="2"
+          />
+          <div class="govuk-input__suffix" aria-hidden="true">homes</div>
+        </div>
+      </div>
 
-        {% from "govuk/components/input/macro.njk" import govukInput %}
-        <h2 class="govuk-table__caption--m">Phase 1</h2>
-        {{ govukInput({
-          label: {
-            text: "Enter the number of homes per phase."
-          },
-          classes: "govuk-input--width-5",
-          id: "phase-1-homes",
-          name: "phase-1-homes",
-          suffix: {
-            text: "homes"
-          },
-          value: data['phase-1-homes'],
-          spellcheck: false
-        }) }}
-
-        <h2 class="govuk-table__caption--m">Phase 2</h2>
-        {{ govukInput({
-          label: {
-            text: "Enter the number of homes per phase."
-          },
-          classes: "govuk-input--width-5",
-          id: "phase-2-homes",
-          name: "phase-2-homes",
-          value: data['phase-2-homes'],
-          suffix: {
-            text: "homes"
-          },
-          spellcheck: false
-        }) }}
-
-
-        {{ govukButton({
-          text: "Continue",
-          classes: "govuk-!-margin-top-9"
-        }) }}
-
-      </form>
-
-    </div>
+      <button
+        class="govuk-button govuk-!-margin-top-9"
+        data-module="govuk-button"
+      >
+        Continue
+      </button>
+    </form>
   </div>
+</div>
 
 {% endblock %}

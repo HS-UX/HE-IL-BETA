@@ -1,183 +1,158 @@
-{% extends "layouts/main.html" %}
+{% extends "layouts/main.html" %} {% block pageTitle %} Question page template –
+{{ serviceName }} – GOV.UK Prototype Kit {% endblock %} {% set serviceName %}
+Define a house type {% endset%} {% block beforeContent %} {{ govukBackLink({
+text: "Back", href: "javascript:window.history.back()" }) }} {% endblock %} {%
+block content %}
 
-{% block pageTitle %}
-  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
-{% endblock %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Check your answers</h1>
 
-{% set serviceName %}
-  Define a house type
-{% endset%}
+    <h3 class="govuk-fieldset__legend--m"></h3>
 
-{% block beforeContent %}
-  {{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
-{% endblock %}
-
-{% block content %}
-
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-
-      <h1 class="govuk-heading-l">
-        Check your answers
-      </h1>
-
-      <h3 class="govuk-fieldset__legend--m"></h3>
-
-      <form class="form" action="/cashflow/cashflow-form" method="post">
-
-        <table class="govuk-table">
-          <caption class="govuk-table__caption govuk-table__caption--m">Additional income</caption>
-          <thead class="govuk-table__head">
-            <tr class="govuk-table__row">
-              <th scope="col" class="govuk-table__header">Source of additional income</th>
-              <th scope="col" class="govuk-table__header">Date</th>
-              <th scope="col" class="govuk-table__header">Total amount</th>
-              <th scope="col" class="govuk-table__header">Action</th>
-            </tr>
-          </thead>
-          <tbody class="govuk-table__body">
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">Commercial units</td>
-              <!-- {%if data['commercial-date-month'] == undefined %}
+    <form class="form" action="/cashflow/cashflow-form" method="post">
+      <table class="govuk-table">
+        <caption class="govuk-table__caption govuk-table__caption--m">
+          Additional income
+        </caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">
+              Source of additional income
+            </th>
+            <th scope="col" class="govuk-table__header">Date</th>
+            <th scope="col" class="govuk-table__header">Total amount</th>
+            <th scope="col" class="govuk-table__header">Action</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Commercial units</td>
+            <!-- {%if data['commercial-date-month'] == undefined %}
                  <td class="govuk-table__cell">-</td>
               {%endif%}
               {%if data['commercial-date-month'] !== undefined %}
               <td class="govuk-table__cell">{{data['commercial-date-month']}}/{{data['commercial-date-year']}}</td>
 
               {%endif%} -->
-              <td class="govuk-table__cell">
-                {%if data['commercial-date-month'] !== undefined %}
-                {{data['commercial-date-month']}}/{{data['commercial-date-year']}}
-                {%endif%}
-                {%if data['commercial-date-month'] == undefined %}
-                -
-                {%endif%}
-              
-              </td>
-              <td class="govuk-table__cell">
-                {%if data['ammount-commercial'] !== undefined %}
-                £{{data['ammount-commercial']}}
-                {%endif%}
+            <td class="govuk-table__cell">
+              {%if data['commercial-date-month'] !== undefined %}
+              {{data['commercial-date-month']}}/{{data['commercial-date-year']}}
+              {%endif%} {%if data['commercial-date-month'] == undefined %} -
+              {%endif%}
+            </td>
+            <td class="govuk-table__cell">
+              {%if data['ammount-commercial'] !== undefined %}
+              £{{data['ammount-commercial']}} {%endif%} {%if
+              data['ammount-commercial'] == undefined %} - {%endif%}
+            </td>
+            <td class="govuk-table__cell">
+              <a href="/revenue/revenue-commercial.html">Change</a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Parking</td>
+            <td class="govuk-table__cell">
+              {%if data['ammount-date-month'] !== undefined %}
+              {{data['parking-date-month']}}/{{data['parking-date-year']}}
+              {%endif%} {%if data['ammount-date-month'] == undefined %} -
+              {%endif%}
+            </td>
+            <td class="govuk-table__cell">
+              {%if data['ammount-parking'] !== undefined %}
+              £{{data['ammount-parking']}} {%endif%} {%if
+              data['ammount-parking'] == undefined %} - {%endif%}
+            </td>
+            <td class="govuk-table__cell">
+              <a href="/revenue/revenue-parking.html">Change</a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Rent</td>
+            <td class="govuk-table__cell">
+              {%if data['rent-date-month'] !== undefined %}
+              {{data['rent-date-month']}}/{{data['rent-date-year']}} {%endif%}
+              {%if data['rent-date-month'] == undefined %} - {%endif%}
+            </td>
 
-                {%if data['ammount-commercial'] == undefined %}
-                -
-                {%endif%}
+            <td class="govuk-table__cell">
+              {%if data['ammount-rent'] !== undefined %}
+              £{{data['ammount-rent']}} {%endif%} {%if data['ammount-rent'] ==
+              undefined %} - {%endif%}
+            </td>
+            <td class="govuk-table__cell">
+              <a href="/revenue/revenue-rent.html">Change</a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Other</td>
+            <td class="govuk-table__cell">
+              {%if data['other-date-month'] !== undefined %}
+              {{data['other-date-month']}}/{{data['other-date-year']}} {%endif%}
+              {%if data['other-date-month'] == undefined %} - {%endif%}
+            </td>
+            <td class="govuk-table__cell">
+              {%if data['ammount-other'] !== undefined %}
+              £{{data['ammount-other']}} {%endif%} {%if data['ammount-other'] ==
+              undefined %} - {%endif%}
+            </td>
+            <td class="govuk-table__cell">
+              <a href="/revenue/revenue-other.html">Change</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
 
-              
-              </td>
-              <td class="govuk-table__cell"><a href="/revenue/revenue-commercial.html">Change</a></td>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">Parking</td>
-              <td class="govuk-table__cell">
+      <h3 class="govuk-fieldset__legend--m">
+        Have you completed this section?
+      </h3>
+      <fieldset class="govuk-fieldset">
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input
+              class="govuk-radios__input"
+              id="have-you-completed-this-section"
+              name="have-you-completed-this-section"
+              type="radio"
+              value="Yes, I’ve completed this section"
+              checked=""
+            />
+            <label
+              class="govuk-label govuk-radios__label"
+              for="have-you-completed-this-section"
+            >
+              Yes, I’ve completed this section
+            </label>
+          </div>
 
-                {%if data['ammount-date-month'] !== undefined %}
-                {{data['parking-date-month']}}/{{data['parking-date-year']}}
-                {%endif%}
-                {%if data['ammount-date-month'] == undefined %}
-                -
-                {%endif%}
+          <div class="govuk-radios__item">
+            <input
+              class="govuk-radios__input"
+              id="have-you-completed-this-section-2"
+              name="have-you-completed-this-section"
+              type="radio"
+              value="No, I’ll come back later"
+            />
+            <label
+              class="govuk-label govuk-radios__label"
+              for="have-you-completed-this-section-2"
+            >
+              No, I’ll come back later
+            </label>
+          </div>
+        </div>
+      </fieldset>
 
-              </td>
-              <td class="govuk-table__cell">
-                {%if data['ammount-parking'] !== undefined %}
-                £{{data['ammount-parking']}}
-                {%endif%}
-
-                {%if data['ammount-parking'] == undefined %}
-                -
-                {%endif%}
-              </td>
-              <td class="govuk-table__cell"><a href="/revenue/revenue-parking.html">Change</a></td>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">Rent</td>
-              <td class="govuk-table__cell">
-                
-                {%if data['rent-date-month'] !== undefined %}
-                {{data['rent-date-month']}}/{{data['rent-date-year']}}
-                {%endif%}
-                {%if data['rent-date-month'] == undefined %}
-                -
-                {%endif%}
-              
-              
-                <td class="govuk-table__cell">
-                  
-                  {%if data['ammount-rent'] !== undefined %}
-                  £{{data['ammount-rent']}}
-                  {%endif%}
-  
-                  {%if data['ammount-rent'] == undefined %}
-                  -
-                  {%endif%}
-                
-                </td>
-              <td class="govuk-table__cell"><a href="/revenue/revenue-rent.html">Change</a></td>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">Other</td>
-              <td class="govuk-table__cell">
-                
-                {%if data['other-date-month'] !== undefined %}
-                {{data['other-date-month']}}/{{data['other-date-year']}}
-                {%endif%}
-                {%if data['other-date-month'] == undefined %}
-                -
-                {%endif%}
-              </td>
-              <td class="govuk-table__cell">
-                {%if data['ammount-other'] !== undefined %}
-                £{{data['ammount-other']}}
-                {%endif%}
-                {%if data['ammount-other'] == undefined %}
-                -
-                {%endif%}
-              </td>
-              <td class="govuk-table__cell"><a href="/revenue/revenue-other.html">Change</a></td>
-            </tr>
-          </tbody>
-        </table>
-
-        <h3 class="govuk-fieldset__legend--m">Have you completed this section?
-        </h3>
-        {{ govukRadios({
-          name: "have-you-completed-this-section",
-
-          fieldset: {
-            legend: {
-              classes: "govuk-fieldset__legend--m"
-            }
-          },
-          items: [
-            {
-              value: "Yes, I’ve completed this section",
-              text: "Yes, I’ve completed this section",
-              checked: checked("have-you-completed-this-section", "Yes, I’ve completed this section")
-            },
-            {
-              value: "No, I’ll come back later",
-              text: "No, I’ll come back later",
-              checked: checked("have-you-completed-this-section", "No, I’ll come back later")
-            }
-          ]
-        }) }}
-
-        <section class="govuk-!-margin-top-9">
-          {{ govukButton({
-            text: "Continue",
-            classes: "button-spacing-right"
-          }) }}
-        </section>
-
-
-
-      </form>
-
-    </div>
+      <section class="govuk-!-margin-top-9">
+        <button
+          class="govuk-button button-spacing-right"
+          data-module="govuk-button"
+        >
+          Continue
+        </button>
+      </section>
+    </form>
   </div>
+</div>
 
 {% endblock %}

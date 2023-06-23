@@ -1,190 +1,249 @@
-{% extends "layouts/main.html" %}
+{% extends "layouts/main.html" %} {% block pageTitle %} Question page template –
+{{ serviceName }} – GOV.UK Prototype Kit {% endblock %} {% set serviceName %}
+Phase 1 {% endset%} {% block beforeContent %} {{ govukBackLink({ text: "Back",
+href: "javascript:window.history.back()" }) }} {% endblock %} {% block content
+%}
 
-{% block pageTitle %}
-  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
-{% endblock %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <p>Phase 1</p>
+      <h1 class="govuk-fieldset__heading">
+        Allocate house types for plots 6-10
+      </h1>
+      <p>
+        Homes England refers to a plot as the land that a home is built upon.
+        <br />
+        Select which house type will be allocated to each plot.
+      </p>
+    </legend>
 
-{% set serviceName %}
-  Phase 1
-{% endset%}
+    <form class="form" action="/phase1/phase-1-types-per-plots" method="post">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h1 class="govuk-fieldset__heading">Plot 6</h1>
+          </legend>
 
+          <div
+            class="govuk-radios govuk-radios--inline"
+            data-module="govuk-radios"
+          >
+            <div class="govuk-radios__item">
+              <input
+                class="govuk-radios__input"
+                id="plot-6"
+                name="plot-6"
+                type="radio"
+                value="House type A"
+              />
+              <label class="govuk-label govuk-radios__label" for="plot-6">
+                House type A
+              </label>
+            </div>
 
-{% block beforeContent %}
-  {{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
-{% endblock %}
+            <div class="govuk-radios__item">
+              <input
+                class="govuk-radios__input"
+                id="plot-6-2"
+                name="plot-6"
+                type="radio"
+                value="House type B"
+              />
+              <label class="govuk-label govuk-radios__label" for="plot-6-2">
+                House type B
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
 
-{% block content %}
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h1 class="govuk-fieldset__heading">Plot 7</h1>
+          </legend>
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-        <p>Phase 1</p>
-        <h1 class="govuk-fieldset__heading">
-          Allocate house types for plots 6-10
-        </h1>
-        <p>Homes England refers to a plot as the land that a home is built upon. <br/>
-          Select which house type will be allocated to each plot.</p>
-      </legend>
+          <div
+            class="govuk-radios govuk-radios--inline"
+            data-module="govuk-radios"
+          >
+            <div class="govuk-radios__item">
+              <input
+                class="govuk-radios__input"
+                id="plot-7"
+                name="plot-7"
+                type="radio"
+                value="House type A"
+              />
+              <label class="govuk-label govuk-radios__label" for="plot-7">
+                House type A
+              </label>
+            </div>
 
+            <div class="govuk-radios__item">
+              <input
+                class="govuk-radios__input"
+                id="plot-7-2"
+                name="plot-7"
+                type="radio"
+                value="House type B"
+              />
+              <label class="govuk-label govuk-radios__label" for="plot-7-2">
+                House type B
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
 
-      <form class="form" action="/phase1/phase-1-types-per-plots" method="post">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h1 class="govuk-fieldset__heading">Plot 8</h1>
+          </legend>
 
-        {{ govukRadios({
-          classes: "govuk-radios--inline",
-          name: "plot-6",
-          fieldset: {
-            legend: {
-              text: "Plot 6",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--m"
-            }
-          },
-          items: [
-            {
-              value: "House type A",
-              text: "House type A",
-              checked: checked("plot-6", "House type A")
-            },
-            {
-              value: "House type B",
-              text: "House type B",
-              checked: checked("plot-6", "House type B")
-            }
-          ]
-        }) }}
+          <div
+            class="govuk-radios govuk-radios--inline"
+            data-module="govuk-radios"
+          >
+            <div class="govuk-radios__item">
+              <input
+                class="govuk-radios__input"
+                id="plot-8"
+                name="plot-8"
+                type="radio"
+                value="House type A"
+              />
+              <label class="govuk-label govuk-radios__label" for="plot-8">
+                House type A
+              </label>
+            </div>
 
-        {{ govukRadios({
-          classes: "govuk-radios--inline",
-          name: "plot-7",
-          fieldset: {
-            legend: {
-              text: "Plot 7",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--m"
-            }
-          },
-          items: [
-            {
-              value: "House type A",
-              text: "House type A",
-              checked: checked("plot-7", "House type A")
-            },
-            {
-              value: "House type B",
-              text: "House type B",
-              checked: checked("plot-7", "House type B")
-            }
-          ]
-        }) }}
+            <div class="govuk-radios__item">
+              <input
+                class="govuk-radios__input"
+                id="plot-8-2"
+                name="plot-8"
+                type="radio"
+                value="House type B"
+              />
+              <label class="govuk-label govuk-radios__label" for="plot-8-2">
+                House type B
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
 
-        {{ govukRadios({
-          classes: "govuk-radios--inline",
-          name: "plot-8",
-          fieldset: {
-            legend: {
-              text: "Plot 8",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--m"
-            }
-          },
-          items: [
-            {
-              value: "House type A",
-              text: "House type A",
-              checked: checked("plot-8", "House type A")
-            },
-            {
-              value: "House type B",
-              text: "House type B",
-              checked: checked("plot-8", "House type B")
-            }
-          ]
-        }) }}
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h1 class="govuk-fieldset__heading">Plot 9</h1>
+          </legend>
 
-        {{ govukRadios({
-          classes: "govuk-radios--inline",
-          name: "plot-9",
-          fieldset: {
-            legend: {
-              text: "Plot 9",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--m"
-            }
-          },
-          items: [
-            {
-              value: "House type A",
-              text: "House type A",
-              checked: checked("plot-9", "House type A")
-            },
-            {
-              value: "House type B",
-              text: "House type B",
-              checked: checked("plot-9", "House type B")
-            }
-          ]
-        }) }}
+          <div
+            class="govuk-radios govuk-radios--inline"
+            data-module="govuk-radios"
+          >
+            <div class="govuk-radios__item">
+              <input
+                class="govuk-radios__input"
+                id="plot-9"
+                name="plot-9"
+                type="radio"
+                value="House type A"
+              />
+              <label class="govuk-label govuk-radios__label" for="plot-9">
+                House type A
+              </label>
+            </div>
 
-        {{ govukRadios({
-          classes: "govuk-radios--inline",
-          name: "plot-10",
-          fieldset: {
-            legend: {
-              text: "Plot 10",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--m"
-            }
-          },
-          items: [
-            {
-              value: "House type A",
-              text: "House type A",
-              checked: checked("plot-10", "House type A")
-            },
-            {
-              value: "House type B",
-              text: "House type B",
-              checked: checked("plot-10", "House type B")
-            }
-          ]
-        }) }}
+            <div class="govuk-radios__item">
+              <input
+                class="govuk-radios__input"
+                id="plot-9-2"
+                name="plot-9"
+                type="radio"
+                value="House type B"
+              />
+              <label class="govuk-label govuk-radios__label" for="plot-9-2">
+                House type B
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
 
-        {{ govukButton({
-          text: "Continue",
-          classes: "govuk-!-margin-top-9"
-        }) }}
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h1 class="govuk-fieldset__heading">Plot 10</h1>
+          </legend>
 
-      </form>
+          <div
+            class="govuk-radios govuk-radios--inline"
+            data-module="govuk-radios"
+          >
+            <div class="govuk-radios__item">
+              <input
+                class="govuk-radios__input"
+                id="plot-10"
+                name="plot-10"
+                type="radio"
+                value="House type A"
+              />
+              <label class="govuk-label govuk-radios__label" for="plot-10">
+                House type A
+              </label>
+            </div>
 
-    </div>
-    <div class="govuk-grid-column-one-third">
+            <div class="govuk-radios__item">
+              <input
+                class="govuk-radios__input"
+                id="plot-10-2"
+                name="plot-10"
+                type="radio"
+                value="House type B"
+              />
+              <label class="govuk-label govuk-radios__label" for="plot-10-2">
+                House type B
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
 
-      <aside class="govuk-!-margin-top-8" role="complementary">
-        <h2 class="govuk-heading-m" id="subsection-title">
-          House types
-        </h2>
-        <p class="govuk-body-s border-top">
-          <span class="govuk-!-font-weight-bold">House Type A</span> <br/>
-           {{ data['what-tenure-is-this-house-type']}}
-          {{ data['what-construction-method-will-be-used-to-build-this-house-type']}} <br/>
-          {{ data['size-of-this-house-type-a']}} square feet <br/>
-          £{{data['dales-value-of-house-type-a']}}
-        </p>
-
-        <p class="govuk-body-s border-top">
-          <span class="govuk-!-font-weight-bold">House Type B</span> <br/>
-          {{ data['what-tenure-is-this-house-type-b']}}
-          {{ data['what-construction-method-will-be-used-to-build-this-house-type-b']}} <br/>
-          {{ data['size-of-this-house-type-b']}} square feet <br/>
-          £{{data['dales-value-of-house-type-b']}}
-        </p>
-      </aside>
-
-    </div>
-
+      <button
+        class="govuk-button govuk-!-margin-top-9"
+        data-module="govuk-button"
+      >
+        Continue
+      </button>
+    </form>
   </div>
+  <div class="govuk-grid-column-one-third">
+    <aside class="govuk-!-margin-top-8" role="complementary">
+      <h2 class="govuk-heading-m" id="subsection-title">House types</h2>
+      <p class="govuk-body-s border-top">
+        <span class="govuk-!-font-weight-bold">House Type A</span> <br />
+        {{ data['what-tenure-is-this-house-type']}} {{
+        data['what-construction-method-will-be-used-to-build-this-house-type']}}
+        <br />
+        {{ data['size-of-this-house-type-a']}} square feet <br />
+        £{{data['dales-value-of-house-type-a']}}
+      </p>
+
+      <p class="govuk-body-s border-top">
+        <span class="govuk-!-font-weight-bold">House Type B</span> <br />
+        {{ data['what-tenure-is-this-house-type-b']}} {{
+        data['what-construction-method-will-be-used-to-build-this-house-type-b']}}
+        <br />
+        {{ data['size-of-this-house-type-b']}} square feet <br />
+        £{{data['dales-value-of-house-type-b']}}
+      </p>
+    </aside>
+  </div>
+</div>
 
 {% endblock %}
