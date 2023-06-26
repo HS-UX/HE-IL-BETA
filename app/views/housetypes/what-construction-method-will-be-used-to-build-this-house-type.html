@@ -1,77 +1,101 @@
-{% extends "layouts/main.html" %}
+{% extends "layouts/main.html" %} {% block pageTitle %} Question page template –
+{{ serviceName }} – GOV.UK Prototype Kit {% endblock %} {% set serviceName %}
+Define a house type {% endset%} {% block beforeContent %} {{ govukBackLink({
+text: "Back", href: "javascript:window.history.back()" }) }} {% endblock %} {%
+block content %}
 
-{% block pageTitle %}
-  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
-{% endblock %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <p>House type A</p>
+      <h1 class="govuk-fieldset__heading">
+        What construction method will be used to build this house type?
+      </h1>
+    </legend>
 
-{% set serviceName %}
-  Define a house type
-{% endset%}
+    <form
+      class="form"
+      action="/housetypes/what-is-the-size-of-this-house-type"
+      method="post"
+    >
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input
+                class="govuk-radios__input"
+                id="what-construction-method-will-be-used-to-build-this-house-type"
+                name="what-construction-method-will-be-used-to-build-this-house-type"
+                type="radio"
+                value="Traditional"
+              />
+              <label
+                class="govuk-label govuk-radios__label"
+                for="what-construction-method-will-be-used-to-build-this-house-type"
+              >
+                Traditional
+              </label>
+            </div>
 
-{% block beforeContent %}
-  {{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
-{% endblock %}
+            <div class="govuk-radios__item">
+              <input
+                class="govuk-radios__input"
+                id="what-construction-method-will-be-used-to-build-this-house-type-2"
+                name="what-construction-method-will-be-used-to-build-this-house-type"
+                type="radio"
+                value="Timber frame"
+              />
+              <label
+                class="govuk-label govuk-radios__label"
+                for="what-construction-method-will-be-used-to-build-this-house-type-2"
+              >
+                Timber frame
+              </label>
+            </div>
 
-{% block content %}
+            <div class="govuk-radios__item">
+              <input
+                class="govuk-radios__input"
+                id="what-construction-method-will-be-used-to-build-this-house-type-3"
+                name="what-construction-method-will-be-used-to-build-this-house-type"
+                type="radio"
+                value="Modern methods of construction (offsite)"
+              />
+              <label
+                class="govuk-label govuk-radios__label"
+                for="what-construction-method-will-be-used-to-build-this-house-type-3"
+              >
+                Modern methods of construction (offsite)
+              </label>
+            </div>
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-        <p>House type A</p>
-        <h1 class="govuk-fieldset__heading">
-          What construction method will be used to build this house type?
-        </h1>
-      </legend>
+            <div class="govuk-radios__item">
+              <input
+                class="govuk-radios__input"
+                id="what-construction-method-will-be-used-to-build-this-house-type-4"
+                name="what-construction-method-will-be-used-to-build-this-house-type"
+                type="radio"
+                value="Other"
+              />
+              <label
+                class="govuk-label govuk-radios__label"
+                for="what-construction-method-will-be-used-to-build-this-house-type-4"
+              >
+                Other
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
 
-
-      <form class="form" action="/housetypes/what-is-the-size-of-this-house-type" method="post">
-
-        {{ govukRadios({
-          name: "what-construction-method-will-be-used-to-build-this-house-type",
-          fieldset: {
-            legend: {
-              text: "",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--m"
-            }
-          },
-          items: [
-            {
-              value: "Traditional",
-              text: "Traditional",
-              checked: checked("what-construction-method-will-be-used-to-build-this-house-type", "Traditional")
-            },
-            {
-              value: "Timber frame",
-              text: "Timber frame",
-              checked: checked("what-construction-method-will-be-used-to-build-this-house-type", "Timber frame")
-            },
-            {
-              value: "Modern methods of construction (offsite)",
-              text: "Modern methods of construction (offsite)",
-              checked: checked("what-construction-method-will-be-used-to-build-this-house-type", "Modern methods of construction (offsite)")
-            },
-            {
-              value: "Other",
-              text: "Other",
-              checked: checked("what-construction-method-will-be-used-to-build-this-house-type", "Other")
-            }
-
-          ]
-        }) }}
-
-
-        {{ govukButton({
-          text: "Continue",
-          classes: "govuk-!-margin-top-9"
-        }) }}
-
-      </form>
-
-    </div>
+      <button 
+        class="govuk-button govuk-!-margin-top-9"
+        data-module="govuk-button"
+      >
+        Continue
+      </button>
+    </form>
   </div>
+</div>
 
 {% endblock %}

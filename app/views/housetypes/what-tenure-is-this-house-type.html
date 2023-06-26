@@ -1,83 +1,123 @@
-{% extends "layouts/main.html" %}
+{% extends "layouts/main.html" %} {% block pageTitle %} Question page template –
+{{ serviceName }} – GOV.UK Prototype Kit {% endblock %} {% set serviceName %}
+Define a house type {% endset%} {% block beforeContent %} {{ govukBackLink({
+text: "Back", href: "javascript:window.history.back()" }) }} {% endblock %} {%
+block content %}
 
-{% block pageTitle %}
-  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
-{% endblock %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <p>House type A</p>
+      <h1 class="govuk-fieldset__heading">What tenure is this house type?</h1>
+      <p class="govuk-!-margin-top-8 grey-text">
+        The tenure will be defined in your s106/CIL agreement or similar.
+      </p>
+    </legend>
 
-{% set serviceName %}
-  Define a house type
-{% endset%}
+    <form
+      class="form"
+      action="/housetypes/what-construction-method-will-be-used-to-build-this-house-type"
+      method="post"
+    >
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input
+                class="govuk-radios__input"
+                id="what-tenure-is-this-house-type"
+                name="what-tenure-is-this-house-type"
+                type="radio"
+                value="Open market housing - homes sold directly to homebuyers on the open market"
+              />
+              <label
+                class="govuk-label govuk-radios__label"
+                for="what-tenure-is-this-house-type"
+              >
+                Open market housing - homes sold directly to homebuyers on the
+                open market
+              </label>
+            </div>
 
-{% block beforeContent %}
-  {{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
-{% endblock %}
+            <div class="govuk-radios__item">
+              <input
+                class="govuk-radios__input"
+                id="what-tenure-is-this-house-type-2"
+                name="what-tenure-is-this-house-type"
+                type="radio"
+                value="Market rent - homes let directly to tenants"
+              />
+              <label
+                class="govuk-label govuk-radios__label"
+                for="what-tenure-is-this-house-type-2"
+              >
+                Market rent - homes let directly to tenants
+              </label>
+            </div>
 
-{% block content %}
+            <div class="govuk-radios__item">
+              <input
+                class="govuk-radios__input"
+                id="what-tenure-is-this-house-type-3"
+                name="what-tenure-is-this-house-type"
+                type="radio"
+                value="Affordable rent - homes sold to a Housing Association or similar, to then be let to eligible tenants at a discount compared to market prices"
+              />
+              <label
+                class="govuk-label govuk-radios__label"
+                for="what-tenure-is-this-house-type-3"
+              >
+                Affordable rent - homes sold to a Housing Association or
+                similar, to then be let to eligible tenants at a discount
+                compared to market prices
+              </label>
+            </div>
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-        <p>House type A</p>
-        <h1 class="govuk-fieldset__heading">
-          What tenure is this house type?
-        </h1>
-        <p class="govuk-!-margin-top-8 grey-text">The tenure will be defined in your s106/CIL agreement or similar.</p>
-      </legend>
+            <div class="govuk-radios__item">
+              <input
+                class="govuk-radios__input"
+                id="what-tenure-is-this-house-type-4"
+                name="what-tenure-is-this-house-type"
+                type="radio"
+                value="Affordable home ownership (AHO) - homes sold to a Housing Association or similar, to then be sold to eligible homebuyers at a discount compared to market prices"
+              />
+              <label
+                class="govuk-label govuk-radios__label"
+                for="what-tenure-is-this-house-type-4"
+              >
+                Affordable home ownership (AHO) - homes sold to a Housing
+                Association or similar, to then be sold to eligible homebuyers
+                at a discount compared to market prices
+              </label>
+            </div>
 
+            <div class="govuk-radios__item">
+              <input
+                class="govuk-radios__input"
+                id="what-tenure-is-this-house-type-5"
+                name="what-tenure-is-this-house-type"
+                type="radio"
+                value="Other (include any Social Rent, LCHO and Intermediate rent)"
+              />
+              <label
+                class="govuk-label govuk-radios__label"
+                for="what-tenure-is-this-house-type-5"
+              >
+                Other (include any Social Rent, LCHO and Intermediate rent)
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
 
-      <form class="form" action="/housetypes/what-construction-method-will-be-used-to-build-this-house-type" method="post">
-
-        {{ govukRadios({
-          name: "what-tenure-is-this-house-type",
-          fieldset: {
-            legend: {
-              text: "",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--m"
-            }
-          },
-          items: [
-            {
-              value: "Open market housing - homes sold directly to homebuyers on the open market",
-              text: "Open market housing - homes sold directly to homebuyers on the open market",
-              checked: checked("what-tenure-is-this-house-type", "Open market housing - homes sold directly to homebuyers on the open market")
-            },
-            {
-              value: "Market rent - homes let directly to tenants",
-              text: "Market rent - homes let directly to tenants",
-              checked: checked("what-tenure-is-this-house-type", "Market rent - homes let directly to tenants")
-            },
-            {
-              value: "Affordable rent - homes sold to a Housing Association or similar, to then be let to eligible tenants at a discount compared to market prices",
-              text: "Affordable rent - homes sold to a Housing Association or similar, to then be let to eligible tenants at a discount compared to market prices",
-              checked: checked("what-tenure-is-this-house-type", "Affordable rent - homes sold to a Housing Association or similar, to then be let to eligible tenants at a discount compared to market prices")
-            },
-            {
-              value: "Affordable home ownership (AHO) - homes sold to a Housing Association or similar, to then be sold to eligible homebuyers at a discount compared to market prices",
-              text: "Affordable home ownership (AHO) - homes sold to a Housing Association or similar, to then be sold to eligible homebuyers at a discount compared to market prices",
-              checked: checked("what-tenure-is-this-house-type", "Affordable home ownership (AHO) - homes sold to a Housing Association or similar, to then be sold to eligible homebuyers at a discount compared to market prices")
-            },
-            {
-              value: "Other (include any Social Rent, LCHO and Intermediate rent)",
-              text: "Other (include any Social Rent, LCHO and Intermediate rent)",
-              checked: checked("what-tenure-is-this-house-type", "Other (include any Social Rent, LCHO and Intermediate rent)")
-            }
-
-          ]
-        }) }}
-
-
-        {{ govukButton({
-          text: "Continue",
-          classes: "govuk-!-margin-top-9"
-        }) }}
-
-      </form>
-
-    </div>
+      <button
+        class="govuk-button govuk-!-margin-top-9"
+        data-module="govuk-button"
+      >
+        Continue
+      </button>
+    </form>
   </div>
+</div>
 
 {% endblock %}

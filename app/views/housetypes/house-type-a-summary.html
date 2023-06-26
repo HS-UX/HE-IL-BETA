@@ -1,145 +1,100 @@
-{% extends "layouts/main.html" %}
+{% extends "layouts/main.html" %} {% block pageTitle %} Question page template –
+{{ serviceName }} – GOV.UK Prototype Kit {% endblock %} {% block beforeContent
+%} {{ govukBackLink({ text: "Back", href: "javascript:window.history.back()" })
+}} {% endblock %} {% block content %}
 
-{% block pageTitle %}
-  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
-{% endblock %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Check your answers</h1>
 
-{% block beforeContent %}
-  {{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
-{% endblock %}
+    <h3 class="govuk-fieldset__legend--m">House type A</h3>
 
-{% block content %}
+    <form
+      class="form"
+      action="/housetypes/house-type-a-summary-answer"
+      method="post"
+    >
+      {{ govukSummaryList({ rows: [ { key:{ text: "Tenure" }, value: { text:
+      data['what-tenure-is-this-house-type'] }, actions: { items: [ { href:
+      "/housetypes/what-tenure-is-this-house-type", text: "Change",
+      visuallyHiddenText: "" } ] } }, { key:{ text: "Construction method" },
+      value: { text:
+      data['what-construction-method-will-be-used-to-build-this-house-type'] },
+      actions: { items: [ { href:
+      "/housetypes/what-construction-method-will-be-used-to-build-this-house-type",
+      text: "Change", visuallyHiddenText: "" } ] } }, { key:{ text: "Size" },
+      value: { text: data['size-of-this-house-type-a'] }, actions: { items: [ {
+      href: "/housetypes/what-is-the-size-of-this-house-type", text: "Change",
+      visuallyHiddenText: "" } ] } }, { key:{ text: "Projected sales value" },
+      value: { text: data['dales-value-of-house-type-a'] }, actions: { items: [
+      { href:
+      "/housetypes/what-is-the-projected-sales-value-of-this-house-type", text:
+      "Change", visuallyHiddenText: "" } ] } } ] }) }}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h1 class="govuk-fieldset__heading">
+              Do you want to add another house type?
+            </h1>
+          </legend>
 
-      <h1 class="govuk-heading-l">
-        Check your answers
-      </h1>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input
+                class="govuk-radios__input"
+                id="do-you-want-to-add-another-house-type"
+                name="do-you-want-to-add-another-house-type"
+                type="radio"
+                value="Yes, add another house type"
+              />
+              <label
+                class="govuk-label govuk-radios__label"
+                for="do-you-want-to-add-another-house-type"
+              >
+                Yes, add another house type
+              </label>
+            </div>
 
-      <h3 class="govuk-fieldset__legend--m">House type A</h3>
+            <div class="govuk-radios__item">
+              <input
+                class="govuk-radios__input"
+                id="do-you-want-to-add-another-house-type-2"
+                name="do-you-want-to-add-another-house-type"
+                type="radio"
+                value="No, go back to the cashflow"
+              />
+              <label
+                class="govuk-label govuk-radios__label"
+                for="do-you-want-to-add-another-house-type-2"
+              >
+                No, go back to the cashflow
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
 
-      <form class="form" action="/housetypes/house-type-a-summary-answer" method="post">
+      <section class="govuk-!-margin-top-9">
+        <button
+          class="govuk-button button-spacing-right"
+          data-module="govuk-button"
+        >
+          Continue
+        </button>
 
-        {{ govukSummaryList({
-          rows: [
-            {
-              key:{
-                text: "Tenure"
-              },
-              value: {
-                text: data['what-tenure-is-this-house-type']
-              },
-              actions: {
-                items: [
-                  {
-                    href: "/housetypes/what-tenure-is-this-house-type",
-                    text: "Change",
-                    visuallyHiddenText: ""
-                  }
-                ]
-              }
-            },
-            {
-              key:{
-                text: "Construction method"
-              },
-              value: {
-                text: data['what-construction-method-will-be-used-to-build-this-house-type']
-              },
-              actions: {
-                items: [
-                  {
-                    href: "/housetypes/what-construction-method-will-be-used-to-build-this-house-type",
-                    text: "Change",
-                    visuallyHiddenText: ""
-                  }
-                ]
-              }
-            },
-            {
-              key:{
-                text: "Size"
-              },
-              value: {
-                text: data['size-of-this-house-type-a']
-              },
-              actions: {
-                items: [
-                  {
-                    href: "/housetypes/what-is-the-size-of-this-house-type",
-                    text: "Change",
-                    visuallyHiddenText: ""
-                  }
-                ]
-              }
-            },
-            {
-              key:{
-                text: "Projected sales value"
-              },
-              value: {
-                text: data['dales-value-of-house-type-a']
-              },
-              actions: {
-                items: [
-                  {
-                    href: "/housetypes/what-is-the-projected-sales-value-of-this-house-type",
-                    text: "Change",
-                    visuallyHiddenText: ""
-                  }
-                ]
-              }
-            }
-            
-          ]
-        }) }}
-
-
-        {{ govukRadios({
-          name: "do-you-want-to-add-another-house-type",
-          fieldset: {
-            legend: {
-              text: "Do you want to add another house type?",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--m"
-            }
-          },
-          items: [
-            {
-              value: "Yes, add another house type",
-              text: "Yes, add another house type",
-              checked: checked("do-you-want-to-add-another-house-type", "Yes, add another house type")
-            },
-            {
-              value: "No, go back to the cashflow",
-              text: "No, go back to the cashflow",
-              checked: checked("do-you-want-to-add-another-house-type", "No, go back to the cashflow")
-            }
-          ]
-        }) }}
-
-        <section class="govuk-!-margin-top-9">
-          {{ govukButton({
-            text: "Continue",
-            classes: "button-spacing-right"
-          }) }}
-  
-          {{ govukButton({
-            text: "Remove this house type",
-            classes: "govuk-button--secondary ",
-            href: "#"
-          }) }}
-        </section>
-
-
-
-      </form>
-
-    </div>
+        <a
+          href="#"
+          role="button"
+          draggable="false"
+          class="govuk-button govuk-button--secondary"
+          data-module="govuk-button"
+        >
+          Remove this house type
+        </a>
+      </section>
+    </form>
   </div>
+</div>
 
 {% endblock %}
