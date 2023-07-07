@@ -41,3 +41,16 @@
     display: block;
     margin-bottom: 8px;
   }
+
+  .govuk-summary-card__tag {
+    display: flex;
+    align-items: center;
+  }
+
+  .govuk-summary-card__content {
+    &.custom {
+        .govuk-summary-list__row {
+            border-bottom: 0;
+        }
+    }
+  }  

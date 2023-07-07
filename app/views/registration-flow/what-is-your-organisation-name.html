@@ -1,0 +1,65 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
+            What is your organisation name?
+        </h1>
+      </legend>
+  
+
+
+      <form class="form govuk-!-margin-top-7" action="/registration-flow/select-your-organisation" method="post">
+
+        <fieldset class="govuk-fieldset">
+          <div class="govuk-form-group">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="organisation-name">
+                Enter your organisation’s name as it would appear on Companies House.
+              </label>
+              <input
+                class="govuk-input govuk-!-margin-bottom-5"
+                id="organisation-name-search"
+                name="organisation-name-search"
+                type="text"
+                value='{{data['organisation-name-search']}}'
+                
+              />
+            </div>
+
+            <a class="govuk-link" href="#">
+              I do not yet have a company, or I plan to set up a special purpose vehicle (SPV) later.
+            </a>
+        
+            </div>
+            </fieldset>
+
+
+
+
+        <button class="govuk-button govuk-!-margin-top-5" data-module="govuk-button">
+          Search
+        </button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

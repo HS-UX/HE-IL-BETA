@@ -1,0 +1,168 @@
+{% extends "layouts/header-extended.html" %}
+{% set pageName="Welcome" %}
+
+{% set serviceName %}
+Homes England
+{% endset%}
+
+
+{% block beforeContent %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+tag: {
+text: "Beta"
+},
+html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.',
+classes: "govuk-!-margin-bottom-3"
+}) }}
+
+
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-thirds">
+
+
+
+    <h1 class="govuk-heading-xl">Manage account</h1>
+
+    <h2 class="govuk-heading-m">Your contact details</h2>
+
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          First name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data['first-name']}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="/">
+            Change
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Surname
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data['surname']}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="/">
+            Change
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Email address
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data['email-address']}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="/">
+            Change
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Phone number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data['telephone-number']}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="/">
+            Change
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Password
+        </dt>
+        <dd class="govuk-summary-list__value">
+          ***********
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="/">
+            Change
+          </a>
+        </dd>
+      </div>
+    </dl>
+
+
+    <h2 class="govuk-heading-m">Organisation details</h2>
+
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Registered company name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data['organisation-name']}}
+        </dd>
+
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Company Registration Number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          AC012345
+        </dd>
+ 
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Company address
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p>
+            {{data['address-line-1']}} <br/>
+            {{data['address-line-2']}} <br/>
+            {{data['town-or-city']}} <br/>
+            {{data['country']}} <br/>
+            {{data['postcode']}} <br/>
+            
+          </p>
+        </dd>
+      </div>
+    </dl>
+
+    <a href="#">Request to change organisation details</a>
+
+
+    <h2 class="govuk-heading-m govuk-!-margin-top-9">Investment partner</h2>
+
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Investment partner status
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <strong class="govuk-tag govuk-tag--green">
+            Investment Partner
+          </strong>
+        </dd>
+
+      </div>
+      </dl>
+  </div>
+</div>
+
+{% endblock %}

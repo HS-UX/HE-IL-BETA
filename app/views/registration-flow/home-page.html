@@ -1,0 +1,143 @@
+{% extends "layouts/header-extended.html" %} 
+{% set pageName="Welcome" %} 
+
+{% set serviceName %}
+  Homes England
+{% endset%}
+
+
+{% block beforeContent %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.',
+  classes: "govuk-!-margin-bottom-3"
+}) }}
+
+
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-thirds">
+
+    <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title"
+      data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Important
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <p class="govuk-notification-banner__heading">
+            Update your organisation details for Riverwalk Homes application.
+          <a class="govuk-notification-banner__link" href="#">Update details</a>.
+        </p>
+      </div>
+    </div>
+
+    <h1 class="govuk-heading-xl">{{data['organisation-name']}} home page</h1>
+
+    <h2 class="govuk-heading-m">Your applications</h2>
+
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Name</th>
+          <th scope="col" class="govuk-table__header">Status</th>
+          <th scope="col" class="govuk-table__header"></th>
+          <th scope="col" class="govuk-table__header"></th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a href="#">Riverwalk Homes AHP</a>
+          </td>
+          <td class="govuk-table__cell">          
+            Under review
+          </td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--grey">
+              Draft
+            </strong>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="#">Action</a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a href="#">Green Street Development AHP</a>
+          </td>
+          <td class="govuk-table__cell">          
+            Under review
+          </td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--blue">
+              Submitted
+            </strong>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="#">Action</a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a href="#">Lakeside Housing AHP</a>
+          </td>
+          <td class="govuk-table__cell">          
+            Under review
+          </td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--red">
+              Under review
+            </strong>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="#">Action</a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a href="#">Inner city flats Whitechapel AHP</a>
+          </td>
+          <td class="govuk-table__cell">          
+            Under review
+          </td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--green">
+              Approved
+            </strong>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="#">Action</a>
+          </td>
+        </tr>
+      </tbody>
+      </table>
+
+    
+
+    <section class="govuk-!-margin-top-9">
+      <h3 class="govuk-heading-m ">Start new</h2>
+
+        <p>
+          Find out more about available funding programmes
+        </p>
+    
+        <a href="#" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+          Explore available funding programmes
+          </a>
+    </section>
+
+
+   
+  </div>
+</div>
+
+{% endblock %}

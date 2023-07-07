@@ -1,0 +1,32 @@
+{#
+For guidance on how to use layouts see:
+https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
+#}
+
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+
+{% block header %}
+{{ govukHeader({
+  homepageUrl: "/",
+  serviceName: "Homes England",
+  serviceUrl: "#",
+  navigation: [
+    {
+      href: "/registration-flow/home-page",
+      text: "Home page"
+    },
+    {
+      href: "/registration-flow/manage-account",
+      text: "Manage account"
+    },
+    {
+      href: "#3",
+      text: "Consortium"
+    },
+    {
+        href: "#3",
+        text: "Help/FAQ"
+      }
+  ]
+}) }}
+{% endblock %}

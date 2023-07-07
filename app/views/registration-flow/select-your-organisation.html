@@ -1,0 +1,91 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
+          Select your organisation
+        </h1>
+      </legend>
+  
+
+
+      <form class="form govuk-!-margin-top-7" action="/registration-flow/organisation-details" method="post">
+
+        
+        <fieldset class="govuk-fieldset govuk-!-margin-bottom-7">
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input
+                class="govuk-radios__input"
+                id="ABC"
+                name="organisation"
+                type="radio"
+                value="ABC limited"
+              />
+              <label
+                class="govuk-label govuk-radios__label"
+                for="ABC"
+              >
+              ABC limited<br/>
+              Tree walk place<br/>
+              London<br/>
+              E1 6EF
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input
+                class="govuk-radios__input"
+                id="DEF"
+                name="organisation"
+                type="radio"
+                value="DEF limited"
+              />
+              <label
+                class="govuk-label govuk-radios__label"
+                for="DEF"
+              >
+                DEF limited<br/>
+                Tooley St<br/>
+                Southwark<br/>
+                SE1 7BR
+              </label>
+            </div>
+          </div>
+
+          </fieldset>
+      
+
+          <a href="#">
+            I do not yet have a company, or I plan to set up a special purpose vehicle (SPV) later.
+          </a>
+        
+
+
+
+
+        <button class="govuk-button govuk-!-margin-top-5" data-module="govuk-button">
+          Search
+        </button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

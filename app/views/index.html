@@ -1,43 +1,150 @@
-{% extends "layouts/main.html" %}
-
-{% set pageName="Home" %}
-
-{% block content %}
+{% extends "layouts/main.html" %} {% set pageName="Home" %} {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">Account Registration</h1>
 
-    {% include "govuk-prototype-kit/includes/homepage-top.njk" %}
+    <p class="govuk-body">
+      Please complete the following fields to register an account.
+    </p>
+    <p class="govuk-body">
+      Already registered? <a href="#" class="govuk-link">Sign in</a>
+    </p>
 
-    <h1 class="govuk-heading-xl">
-      {{ serviceName }}
-    </h1>
+    <form class="form" action="/registration-flow/what-is-your-organisation-name" method="post">
+      <fieldset class="govuk-fieldset">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-line-1">
+            First name
+          </label>
+          <input
+            class="govuk-input"
+            id="first-name"
+            name="first-name"
+            type="text"
+            value='{{data['first-name']}}'
+            
+          />
+        </div>
 
-    <h1 class="govuk-heading-xl">
-      This is a prototype of the cashflow to be tested on 13 June 2023
-    </h1>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-line-1">
+            Surname
+          </label>
+          <input
+            class="govuk-input"
+            id="surname"
+            name="surname"
+            type="text"
+            value='{{data['surname']}}' 
+          />
+        </div>
 
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-line-1">
+            Email address
+          </label>
+          <input
+            class="govuk-input"
+            id="email-address"
+            name="email-address"
+            type="text"
+            value='{{data['email-address']}}' 
+          />
+        </div>
 
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-line-1">
+            Confirm email address
+          </label>
+          <input
+            class="govuk-input"
+            id="confirm-email-address"
+            name="confirm-email-address"
+            type="text"
+            value='{{data['confirm-email-address']}}' 
+          />
+        </div>
 
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-line-1">
+            Telephone number
+          </label>
+          <input
+            class="govuk-input"
+            id="telephone-number"
+            name="telephone-number"
+            type="text"
+            value='{{data['telephone-number']}}' 
+          />
+        </div>
+
+    
+
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Show password help
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <div class="hint">
+              Your password should be between 8 and 30 characters in length and contain all of the following:
+              <ul>
+                  <li>An UPPERCASE letter</li>
+                  <li>A lowercase letter</li>
+                  <li>A number</li>
+                  <li>A symbol (but not the " character)</li>
+              </ul>
+          </div>
+          </div>
+        </details>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-line-1">
+            Password
+          </label>
+          <input
+            class="govuk-input"
+            id="password"
+            name="password"
+            type="password"
+            value='{{data['password']}}' 
+          />
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-line-1">
+            Confirm password
+          </label>
+          <input
+            class="govuk-input"
+            id="confirm-password"
+            name="confirm-password"
+            type="password"
+            value='{{data['confirm-password']}}' 
+          />
+        </div>
+
+        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="conditions" name="conditions" type="checkbox" value="agree">
+            <label class="govuk-label govuk-checkboxes__label" for="conditions">
+              I agree to the terms and conditions
+            </label>
+          </div>
+        </div>
+
+      </fieldset>
+
+      <button
+        class="govuk-button govuk-!-margin-top-9"
+        data-module="govuk-button"
+      >
+        Register
+      </button>
+    </form>
   </div>
 </div>
-
-<a href="/cashflow/cashflow-start" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">
-  Start now
-  <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
-    <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
-  </svg></a>
-
-
-
-
-    <h3 class="govuk-heading-s">
-      Provide cashflow information - project 1
-    </h3>
-  
-
-
-
-
 
 {% endblock %}

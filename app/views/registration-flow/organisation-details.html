@@ -1,0 +1,163 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">Organisation details</h1>
+
+
+    <form class="form" action="/registration-flow/welcome-page" method="post">
+      <fieldset class="govuk-fieldset">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="organisation-name">
+            Enter your organisation’s name manually. This may mean you have not yet established your organisation, or we could not find it in our initial search. 
+          </label>
+          <input
+            class="govuk-input"
+            id="organisation-name"
+            name="organisation-name"
+            type="text"
+            value='{{data['organisation-name']}}'
+            
+          />
+        </div>
+
+        <h2 class="govuk-heading-m">Head office or registered address</h2>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-line-1">
+            Address line 1
+          </label>
+          <input
+            class="govuk-input"
+            id="address-line-1"
+            name="address-line-1"
+            type="text"
+            value='{{data['address-line-1']}}' 
+          />
+        </div>
+
+        
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-line-2">
+            Address line 2 (optional)
+          </label>
+          <input
+            class="govuk-input"
+            id="address-line-2"
+            name="address-line-2"
+            type="text"
+            value='{{data['address-line-2']}}' 
+          />
+        </div>
+
+
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="town-or-city">
+            Town or city
+          </label>
+          <input
+            class="govuk-input"
+            id="town-or-city"
+            name="town-or-city"
+            type="text"
+            value='{{data['town-or-city']}}' 
+          />
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="country">
+            Country (optional)
+          </label>
+          <input
+            class="govuk-input"
+            id="country"
+            name="country"
+            type="text"
+            value='{{data['country']}}' 
+          />
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="postcode">
+            Postcode
+          </label>
+          <input
+            class="govuk-input govuk-input--width-10"
+            id="postcode"
+            name="postcode"
+            type="text"
+            value='{{data['postcode']}}' 
+          />
+        </div>
+
+    
+        <h2 class="govuk-heading-m">Lead contact</h2>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="lead-contanct-first-name">
+            Lead contact first name
+          </label>
+          <input
+            class="govuk-input"
+            id="lead-contanct-first-name"
+            name="lead-contanct-first-name"
+            type="text"
+            value='{{data['lead-contanct-first-name']}}' 
+          />
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="lead-contanct-surname">
+            Lead contact surname
+          </label>
+          <input
+            class="govuk-input"
+            id="lead-contanct-surname"
+            name="lead-contanct-surname"
+            type="text"
+            value='{{data['lead-contanct-surname']}}' 
+          />
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="lead-contanct-email">
+            Lead contact email
+          </label>
+          <input
+            class="govuk-input"
+            id="lead-contanct-email"
+            name="lead-contanct-email"
+            type="text"
+            value='{{data['lead-contanct-email']}}' 
+          />
+        </div>
+
+      </fieldset>
+
+      <button
+        class="govuk-button govuk-!-margin-top-9"
+        data-module="govuk-button"
+      >
+        Continue
+      </button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}
