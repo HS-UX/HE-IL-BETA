@@ -42,7 +42,27 @@
 
     <h1 class="govuk-heading-xl">{{data['organisation-name']}} home page</h1>
 
-    <h2 class="govuk-heading-m">Your applications</h2>
+    <section class="filter-container">
+      <div class="">
+        <h2 class="govuk-heading-m">Your applications</h2>
+      </div>
+
+      <div class="">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="sort">
+            Sort by
+          </label>
+          <select class="govuk-select" id="sort" name="sort">
+            <option value="published" selected>Recent activity</option>
+            <option value="updated" >Recently updated</option>
+            <option value="views">Most views</option>
+            <option value="comments">Most comments</option>
+          </select>
+        </div>
+      </div>
+
+    </section>
+    
 
     <table class="govuk-table">
       <thead class="govuk-table__head">

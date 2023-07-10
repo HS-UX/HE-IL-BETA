@@ -1,0 +1,65 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+  tag: {
+  text: "Beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.',
+  classes: "govuk-!-margin-bottom-3"
+  }) }}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        Add organisation to consortium
+      </h1>
+    </legend>
+
+
+
+    <form class="form govuk-!-margin-top-7" action="/registration-flow/select-organisation-1" method="post">
+
+      <fieldset class="govuk-fieldset">
+        <div class="govuk-form-group">
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="organisation-name-1">
+              What is the name of the organisation you want to add to the consortium? <br/>
+              <span class="label-grey">Search for the organisation you want to add to the consortium.</span> 
+            </label>
+            <input class="govuk-input govuk-!-margin-bottom-5" id="organisation-name-1" name="organisation-name-1"
+              type="text" value='{{data[' organisation-name-1']}}' />
+          </div>
+
+        </div>
+      </fieldset>
+
+
+
+
+      <button class="govuk-button govuk-!-margin-top-1" data-module="govuk-button">
+        Search
+      </button>
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

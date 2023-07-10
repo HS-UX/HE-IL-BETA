@@ -53,4 +53,28 @@
             border-bottom: 0;
         }
     }
-  }  
+  }
+
+  .filter-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .label-grey {
+    color: $govuk-secondary-text-colour;
+  }
+
+  .action-container {
+    width: fit-content;
+
+  }
+
+  .summary-links-container {
+    display: flex;
+    justify-content: flex-end;
+    a:first-of-type {
+      margin-right: 28px;
+    }
+  }
